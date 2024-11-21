@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="BBLK_ColoringBook"]/description</xpath>
+    <value>
+      <description>A coloring book, will become trash after it has been filled in. Learning rate will be increased while coloring this book.</description>
+    </value>
+  </Operation>
+
+</Patch>

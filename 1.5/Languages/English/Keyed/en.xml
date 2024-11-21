@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Settings -->
+  <BBLK_ChildrensBook_Settings>Childrens Book Settings</BBLK_ChildrensBook_Settings>
+  
+  <BBLK_ChildrensBook_colorbookFactor_Label>Coloring book recreation/learning rate factor</BBLK_ChildrensBook_colorbookFactor_Label>
+  <BBLK_ChildrensBook_colorbookFactor_ToolTip>How much the joy rate will be multiplied when a coloring book is generated. Will not affect coloring books that have been spawned all ready.</BBLK_ChildrensBook_colorbookFactor_ToolTip>
+  
+  <BBLK_ChildrensBook_boredMessege_Label>Bored Messege</BBLK_ChildrensBook_boredMessege_Label>
+  <BBLK_ChildrensBook_boredMessege_ToolTip>Send a messege if an adult or teen become bored while reading a childrens book.</BBLK_ChildrensBook_boredMessege_ToolTip>
+  
+  <BBLK_ChildrensBook_boredTicks_Label>Seconds to check for childrens book boredom</BBLK_ChildrensBook_boredTicks_Label>
+  <BBLK_ChildrensBook_boredTicks_ToolTip>Max number of seconds until adults and teens become bored of childrens books, lower number will make it happen more faster.</BBLK_ChildrensBook_boredTicks_ToolTip>
+  
+  <BBLK_ChildrensBook_colorbookMessege_Label>Coloring Book Completed Messege</BBLK_ChildrensBook_colorbookMessege_Label>
+  <BBLK_ChildrensBook_colorbookMessege_ToolTip>Send a messege when a coloring book has been colored in and become trash.</BBLK_ChildrensBook_colorbookMessege_ToolTip>
+  
+  <BBLK_ChildrensBook_colorbookTick_Label>Seconds to damage coloring book during use</BBLK_ChildrensBook_colorbookTick_Label>
+  <BBLK_ChildrensBook_colorbookTick_ToolTip>How many seconds until coloring book takes usage damage, lower number will make it happen more often.</BBLK_ChildrensBook_colorbookTick_ToolTip>
+  
+  <!-- Messeges -->
+  <BBLK_ChildrensBook_Bored>{PAWN_nameDef} is too old for {BOOK_label}, and quickly became bored trying to read it.</BBLK_ChildrensBook_Bored>
+  <BBLK_ChildrensBook_ColoringBook>{BOOK_label} has been completly colored in by {PAWN_nameDef} and has become trash.</BBLK_ChildrensBook_ColoringBook>
+  
+  <!-- Benefits Strings -->
+  <BBLK_ChildrensBook_LearnFactor>Learning gain multiplier</BBLK_ChildrensBook_LearnFactor>
+  <BBLK_ChildrensBook_LearnJoyFactor>Recreation/Learning gain multiplier</BBLK_ChildrensBook_LearnJoyFactor>
+
+</LanguageData>

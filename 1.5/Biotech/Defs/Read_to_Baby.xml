@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BabyPlayDef>
+    <defName>BBLK_BabyPlay_PlayRead</defName>
+    <workerClass>Childrens_Books.BabyPlayGiver_PlayRead</workerClass>
+    <jobDef>BBLK_Job_PlayRead</jobDef>
+  </BabyPlayDef>
+
+  <JobDef>
+    <defName>BBLK_Job_PlayRead</defName>
+    <reportString>reading TargetB to TargetA.</reportString>
+    <driverClass>Childrens_Books.JobDriver_PlayRead</driverClass>
+  </JobDef>
+
+  <InteractionDef>
+    <defName>BBLK_BabyRead</defName>
+    <label>read</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Item/Book/Novel/Novel_Open_east</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [action] made [RECIPIENT_nameDef] [reaction].</li>
+
+        <li>action(p=4)->reading aloud</li>
+        <li>action->acting out a part of the book</li>
+        <li>action->singing a song from the book</li>
+		
+        <li>reaction->giggle</li>
+        <li>reaction->smile</li>
+        <li>reaction->squirm with joy</li>
+        <li>reaction->laugh</li>
+        <li>reaction->drool playfully</li>
+        <li>reaction->gurgle</li>
+        <li>reaction->squeal</li>
+        <li>reaction->burp</li>
+        <li>reaction->stare in fascination</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+</Defs>

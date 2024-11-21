@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BookBase">
+    <defName>BBLK_ColoringBook</defName>
+    <label>coloring book</label>
+    <description>A coloring book, will become trash after it has been filled in.</description>
+    <graphicData>
+      <texPath>Things/Item/Book/Textbook/Textbook</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+      <color>(60,60,60)</color>
+    </graphicData>
+    <uiIconPath>Things/Item/Book/Textbook/Textbook</uiIconPath>
+    <statBases>
+      <MarketValue>160</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Book">
+        <nameMaker>BBLK_ColoringBook_Namer</nameMaker>
+        <descriptionMaker>BBLK_ColoringBook_Description</descriptionMaker>
+        <ageYearsRange>100~200</ageYearsRange>
+        <openGraphic>
+          <texPath>Things/Item/Book/Textbook/Textbook_Open</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.7</drawSize>
+          <color>(60,60,60)</color>
+        </openGraphic>
+        <verticalGraphic>
+          <texPath>Things/Item/Book/Textbook/Textbook_Vertical</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <addTopAltitudeBias>true</addTopAltitudeBias>
+          <color>(60,60,60)</color>
+        </verticalGraphic>
+        <doers>
+          <li Class="Childrens_Books.BookOutcomeProperties_ColoringBook" />
+        </doers>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <RulePackDef>
+    <defName>BBLK_ColoringBook_Namer</defName>
+    <include>
+      <li>ArtNameUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>title->Let's [artStyle] [artTargetA]</li>
+        <li>title->[artTargetS]: the [artStyle]ing book</li>
+        <li>title->[artStyle]ing [artTargetA]</li>
+        <li>title->[AdjectiveBadass] [artStyle]ing</li>
+        <li>title(p=0.1)->The ancient art of [artStyle]ing</li>
+		
+        <li>artStyle->color</li>
+        <li>artStyle->draw</li>
+        <li>artStyle->sketch</li>
+		
+        <li>artTargetA->a [Animal]</li>
+        <li>artTargetA(p=2)->[artTarget]</li>
+		
+        <li>artTargetS->[Animal]s</li>
+        <li>artTargetS(p=2)->[artTarget]</li>
+		
+        <li>artTarget(p=10)->[TerrainFeature]s</li>
+        <li>artTarget(p=10)->[place]</li>
+        <li>artTarget(p=10)->[vegs]</li>
+        <li>artTarget->my family</li>
+        <li>artTarget->rainbows</li>
+        <li>artTarget->space</li>
+        <li>artTarget->the moon</li>
+        <li>artTarget->the moons</li>
+        <li>artTarget->the planet</li>
+        <li>artTarget->the planets</li>
+        <li>artTarget->the sea</li>
+        <li>artTarget->the sun</li>
+        <li>artTarget->the suns</li>
+        <li>artTarget->the world</li>
+        <li>artTarget->the worlds</li>
+        <li>artTarget(p=0.5)->David Bowie</li>
+        <li>artTarget(p=0.5)->Elmo</li>
+        <li>artTarget(p=0.1)->Spaceballs</li>
+		
+        <li>vegs->apples</li>
+        <li>vegs->avocados</li>
+        <li>vegs->bananas</li>
+        <li>vegs->beets</li>
+        <li>vegs->brussels sprouts</li>
+        <li>vegs->buckwheat</li>
+        <li>vegs->cabbage</li>
+        <li>vegs->carrots</li>
+        <li>vegs->cherries</li>
+        <li>vegs->chickpeas</li>
+        <li>vegs->coconuts</li>
+        <li>vegs->cucumbers</li>
+        <li>vegs->berries</li>
+        <li>vegs->corn</li>
+        <li>vegs->eggplants</li>
+        <li>vegs->lettuce</li>
+        <li>vegs->mangos</li>
+        <li>vegs->melons</li>
+        <li>vegs->onions</li>
+        <li>vegs->opuntias</li>
+        <li>vegs->oranges</li>
+        <li>vegs->peaches</li>
+        <li>vegs->pears</li>
+        <li>vegs->peanuts</li>
+        <li>vegs->peas</li>
+        <li>vegs->peppers</li>
+        <li>vegs->pineapples</li>
+        <li>vegs->plums</li>
+        <li>vegs->potatoes</li>
+        <li>vegs->pumpkins</li>
+        <li>vegs->radishes</li>
+        <li>vegs->rice</li>
+        <li>vegs->sweet potatoes</li>
+        <li>vegs->tomatoes</li>
+		
+        <li>place->Amphitheaters</li>
+        <li>place->Aquariums</li>
+        <li>place->Aqueducts</li>
+        <li>place->Cabins</li>
+        <li>place->Camps</li>
+        <li>place->Castles</li>
+        <li>place->Cathedrals</li>
+        <li>place->Caverns</li>
+        <li>place->Citadels</li>
+        <li>place->Cities</li>
+        <li>place->Coliseums</li>
+        <li>place->Deserts</li>
+        <li>place->Elevators</li>
+        <li>place->Factories</li>
+        <li>place->Festivals</li>
+        <li>place->Fortresses</li>
+        <li>place->Glades</li>
+        <li>place->Graveyards</li>
+        <li>place->Greenhouses</li>
+        <li>place->Groves</li>
+        <li>place->Harbors</li>
+        <li>place->Hearts</li>
+        <li>place->Hives</li>
+        <li>place->Hospitals</li>
+        <li>place->Islands</li>
+        <li>place->Jungles</li>
+        <li>place->Laboratories</li>
+        <li>place->Labyrinths</li>
+        <li>place->Launchpads</li>
+        <li>place->Libraries</li>
+        <li>place->Lighthouses</li>
+        <li>place->Manors</li>
+        <li>place->Mansions</li>
+        <li>place->Marketplaces</li>
+        <li>place->Mines</li>
+        <li>place->Monasteries</li>
+        <li>place->Mountains</li>
+        <li>place->Observatories</li>
+        <li>place->Orchards</li>
+        <li>place->Outposts</li>
+        <li>place->Palaces</li>
+        <li>place->Playgrounds</li>
+        <li>place->Refineries</li>
+        <li>place->Resorts</li>
+        <li>place->Rifts</li>
+        <li>place->Ruins</li>
+        <li>place->Sanctuaries</li>
+        <li>place->Schools</li>
+        <li>place->Settlements</li>
+        <li>place->Ships</li>
+        <li>place->Space Ships</li>
+        <li>place->Space Stations</li>
+        <li>place->Spaceports</li>
+        <li>place->Swamps</li>
+        <li>place->Taverns</li>
+        <li>place->Temples</li>
+        <li>place->Towns</li>
+        <li>place->Universities</li>
+        <li>place->Villages</li>
+        <li>place->Volcanoes</li>
+        <li>place->the Wilderness</li>
+        <li>place->Zoos</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>BBLK_ColoringBook_Description</defName>
+    <include>
+      <li>ArtDescriptionUtility_Global</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        
+        <!-- Roots -->
+        <li>desc->This [writingQualityAdjective] coloring book [writingQualitySentence].</li>
+
+
+        <!-- Writing quality -->
+
+        <li>writingQualityAdjective(quality==6)->remarkably well-drawn</li>
+        <li>writingQualityAdjective(quality==5)->smart and insightful</li>
+        <li>writingQualityAdjective(quality==4)->thoughtful and eloquent</li>
+        <li>writingQualityAdjective(quality==3)->well-drawn</li>
+        <li>writingQualityAdjective(quality==2)->mediocre</li>
+        <li>writingQualityAdjective(quality==1)->poorly-drawn</li>
+        <li>writingQualityAdjective(quality==0)->nearly-incoherent</li>
+
+        <li>writingQualitySentence(quality[greater_than]4)->is [excellentDesc] [excellentExtra]</li>
+        <li>writingQualitySentence(quality[less_than]5,quality[greater_than]1)->is [decentDesc] [decentExtra]</li>
+        <li>writingQualitySentence(quality[less_than]2)->is [awfulDesc] [awfulExtra]</li>
+
+        <li>excellentDesc->a thoughtful exploration of the human spirit</li>
+        <li>excellentDesc->deeply insightful about the complexity of the world</li>
+        <li>excellentDesc->tightly-crafted and rich with emotion</li>
+        <li>excellentDesc->creative and original</li>
+        <li>excellentDesc->wildly original and remarkably well-crafted</li>
+        <li>excellentDesc->filled with relatable humor</li>
+        <li>excellentExtra->. The [picture]s feel real</li>
+        <li>excellentExtra->. The [picture]s are original and deep</li>
+
+        <li>decentDesc->interesting and engaging</li>
+        <li>decentDesc->focused on one interesting idea</li>
+        <li>decentDesc->somewhat humorous from time to time</li>
+        <li>decentDesc->original and quirky</li>
+        <li>decentExtra-> but lacks any deep emotions</li>
+        <li>decentExtra-> but the world is unoriginal and dull</li>
+        <li>decentExtra-> but the [picture]s are excessively flowery</li>
+
+        <li>awfulDesc->very poorly drawn</li>
+        <li>awfulDesc->terribly drawn</li>
+        <li>awfulDesc->hard to read</li>
+        <li>awfulDesc->lacking in artistic vision</li>
+        <li>awfulDesc->bizarre yet unoriginal</li>
+        <li>awfulExtra-> and the drawing is borderline incoherent</li>
+        <li>awfulExtra-> and is extremely hard to follow</li>
+        <li>awfulExtra-> and fails to assemble a coherent picture</li>
+        <li>awfulExtra-> and lacks any sense of theme or meaning</li>
+        <li>awfulExtra-> and doesn't present any interesting ideas at all</li>
+        <li>awfulExtra-> and every [picture] is boring</li>
+		
+        <li>picture->drawing</li>
+        <li>picture->image</li>
+        <li>picture->landscape</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>
