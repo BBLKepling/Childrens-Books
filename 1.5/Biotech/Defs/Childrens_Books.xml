@@ -14,6 +14,7 @@
     <uiIconPath>Things/Item/Book/Novel/Novel</uiIconPath>
     <statBases>
       <MarketValue>160</MarketValue>
+      <WorkToMake>240000</WorkToMake>
     </statBases>
     <comps>
       <li Class="CompProperties_Book">
@@ -430,5 +431,39 @@
       </rulesStrings>
     </rulePack>
   </RulePackDef>
+
+  <RecipeDef MayRequire="VanillaExpanded.VBooksE">
+    <defName>BBLK_WriteChildrensBook</defName>
+    <label>write childrens book</label>
+    <description>Write childrens book.</description>
+    <jobString>write childrens book.</jobString>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <workSkill>Social</workSkill>
+    <unfinishedThingDef>VBE_UnfinishedBook</unfinishedThingDef>
+    <effectWorking>Sculpt</effectWorking>
+    <soundWorking>Recipe_Write</soundWorking>
+    <recipeUsers>
+      <li>VBE_WritersTable</li>
+      <li>VBE_TypewritersTable</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BBLK_ChildrensBook>1</BBLK_ChildrensBook>
+    </products>
+  </RecipeDef>
 
 </Defs>
