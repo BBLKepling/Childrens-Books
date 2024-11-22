@@ -2,3 +2,7 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Childrens Books\1.5\
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Childrens Books\1.5\Source\Childrens Books\obj\Debug\Childrens Books.csproj.AssemblyReference.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Childrens Books\1.5\Source\Childrens Books\obj\Debug\Childrens Books.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Childrens Books\1.5\Source\Childrens Books\obj\Debug\Childrens Books.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Childrens-Books\1.5\Assemblies\Childrens Books.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Childrens-Books\1.5\Source\Childrens Books\obj\Debug\Childrens Books.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Childrens-Books\1.5\Source\Childrens Books\obj\Debug\Childrens Books.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Childrens-Books\1.5\Source\Childrens Books\obj\Debug\Childrens Books.dll

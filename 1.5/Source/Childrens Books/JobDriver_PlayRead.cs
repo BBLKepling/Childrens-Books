@@ -66,7 +66,7 @@ namespace Childrens_Books
                 {
                     roomPlayGainFactor = BabyPlayUtility.GetRoomPlayGainFactors(base.Baby);
                 }
-                if (BabyPlayUtility.PlayTickCheckEnd(base.Baby, pawn, roomPlayGainFactor, Book))
+                if (BabyPlayUtility.PlayTickCheckEnd(base.Baby, pawn, roomPlayGainFactor + Book.JoyFactor - 1, Book))
                 {
                     pawn.jobs.curDriver.ReadyForNextToil();
                 }

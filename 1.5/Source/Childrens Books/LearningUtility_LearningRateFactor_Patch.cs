@@ -10,7 +10,7 @@ namespace Childrens_Books
         [HarmonyPostfix]
         public static void Postfix(Pawn pawn, ref float __result)
         {
-            if (pawn?.CurJob?.targetA.Thing is Book book && (book.def == ChildrensBookDefOf.BBLK_ChildrensBook || book.def == ChildrensBookDefOf.BBLK_ColoringBook)) __result *= book.JoyFactor;
+            if (pawn?.CurJob?.targetA.Thing is Book book && (book.def == ChildrensBookDefOf.BBLK_ChildrensBook || book.def == ChildrensBookDefOf.BBLK_ColoringBook)) __result += book.JoyFactor - 1;
         }
     }
 }
