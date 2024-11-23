@@ -17,7 +17,10 @@ namespace Childrens_Books
         }
         public override void OnReadingTick(Pawn reader, float factor)
         {
-            if (reader.learning != null || Find.TickManager.TicksGame % (ChildrensBookSettings.boredTicks * 60) != 0) return;
+            if (reader.learning != null || 
+                (ModLister.HasActiveModWithName("Young at Heart Trait") && reader.story.traits.HasTrait(ChildrensBookDefOf.BBLK_BigKid)) || 
+                Find.TickManager.TicksGame % (ChildrensBookSettings.boredTicks * 60) != 0
+                ) return;
             if (ChildrensBookSettings.boredMessege) Messages.Message("BBLK_ChildrensBook_Bored".Translate(reader.Named("PAWN"), Parent.Named("BOOK")), Parent, MessageTypeDefOf.NeutralEvent);
             reader.jobs.StopAll();
         }
