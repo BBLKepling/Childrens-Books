@@ -6,12 +6,11 @@
     <label>coloring book</label>
     <description>A coloring book, will become trash after it has been filled in.</description>
     <graphicData>
-      <texPath>Things/Item/Book/Textbook/Textbook</texPath>
+      <texPath>Things/Item/Book/BBLK_ColoringBook/BBLK_ColoringBook</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.8</drawSize>
-      <color>(60,60,60)</color>
     </graphicData>
-    <uiIconPath>Things/Item/Book/Textbook/Textbook</uiIconPath>
+    <uiIconPath>Things/Item/Book/BBLK_ColoringBook/BBLK_ColoringBook</uiIconPath>
     <statBases>
       <MarketValue>160</MarketValue>
       <WorkToMake>180000</WorkToMake>
@@ -22,16 +21,14 @@
         <descriptionMaker>BBLK_ColoringBook_Description</descriptionMaker>
         <ageYearsRange>100~200</ageYearsRange>
         <openGraphic>
-          <texPath>Things/Item/Book/Textbook/Textbook_Open</texPath>
+          <texPath>Things/Item/Book/BBLK_ColoringBook/BBLK_ColoringBook_Open</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>0.7</drawSize>
-          <color>(60,60,60)</color>
         </openGraphic>
         <verticalGraphic>
-          <texPath>Things/Item/Book/Textbook/Textbook_Vertical</texPath>
+          <texPath>Things/Item/Book/BBLK_ColoringBook/BBLK_ColoringBook_Vertical</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <addTopAltitudeBias>true</addTopAltitudeBias>
-          <color>(60,60,60)</color>
         </verticalGraphic>
         <doers>
           <li Class="Childrens_Books.BookOutcomeProperties_ColoringBook" />

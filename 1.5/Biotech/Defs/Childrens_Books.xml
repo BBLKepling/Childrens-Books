@@ -6,12 +6,11 @@
     <label>childrens book</label>
     <description>A book intended for children, adults and teens will quickly become bored trying to read it. Learning rate will be increased while reading this book.</description>
     <graphicData>
-      <texPath>Things/Item/Book/Novel/Novel</texPath>
+      <texPath>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.8</drawSize>
-      <color>(180,60,60)</color>
     </graphicData>
-    <uiIconPath>Things/Item/Book/Novel/Novel</uiIconPath>
+    <uiIconPath>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook</uiIconPath>
     <statBases>
       <MarketValue>160</MarketValue>
       <WorkToMake>240000</WorkToMake>
@@ -22,16 +21,14 @@
         <descriptionMaker>BBLK_ChildrensBook_Description</descriptionMaker>
         <ageYearsRange>100~200</ageYearsRange>
         <openGraphic>
-          <texPath>Things/Item/Book/Novel/Novel_Open</texPath>
+          <texPath>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook_Open</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>0.7</drawSize>
-          <color>(180,60,60)</color>
         </openGraphic>
         <verticalGraphic>
-          <texPath>Things/Item/Book/Novel/Novel_Vertical</texPath>
+          <texPath>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook_Vertical</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <addTopAltitudeBias>true</addTopAltitudeBias>
-          <color>(180,60,60)</color>
         </verticalGraphic>
         <doers>
           <li Class="Childrens_Books.BookOutcomeProperties_ChildrensBook" />

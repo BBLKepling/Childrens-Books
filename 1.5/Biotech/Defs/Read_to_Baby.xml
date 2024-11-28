@@ -18,7 +18,7 @@
     <label>read</label>
     <workerClass>InteractionWorker</workerClass>
     <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
-    <symbol>Things/Item/Book/Novel/Novel_Open_east</symbol>
+    <symbol>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook_Open_east</symbol>
     <logRulesInitiator>
       <rulesStrings>
         <li>r_logentry->[INITIATOR_nameDef] [action] made [RECIPIENT_nameDef] [reaction].</li>
