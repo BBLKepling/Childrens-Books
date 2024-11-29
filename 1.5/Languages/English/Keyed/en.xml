@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- Settings -->
-  <BBLK_ChildrensBook_Settings>Childrens Book Settings</BBLK_ChildrensBook_Settings>
+  <BBLK_ChildrensBook_Settings>Childrens Books</BBLK_ChildrensBook_Settings>
   
   <BBLK_ChildrensBook_colorbookFactor_Label>Coloring book recreation/learning rate factor</BBLK_ChildrensBook_colorbookFactor_Label>
   <BBLK_ChildrensBook_colorbookFactor_ToolTip>How much the joy rate will be multiplied when a coloring book is generated. Will not affect coloring books that have been spawned all ready.</BBLK_ChildrensBook_colorbookFactor_ToolTip>
   
   <BBLK_ChildrensBook_boredMessege_Label>Bored Messege</BBLK_ChildrensBook_boredMessege_Label>
-  <BBLK_ChildrensBook_boredMessege_ToolTip>Send a messege if an adult or teen become bored while reading a childrens book.</BBLK_ChildrensBook_boredMessege_ToolTip>
+  <BBLK_ChildrensBook_boredMessege_ToolTip>Send a messege if a teen or adult becomes bored while reading a childrens book.</BBLK_ChildrensBook_boredMessege_ToolTip>
   
   <BBLK_ChildrensBook_boredTicks_Label>Seconds to check for childrens book boredom</BBLK_ChildrensBook_boredTicks_Label>
   <BBLK_ChildrensBook_boredTicks_ToolTip>Max number of seconds until adults and teens become bored of childrens books, lower number will make it happen more faster.</BBLK_ChildrensBook_boredTicks_ToolTip>
@@ -23,7 +23,9 @@
   <BBLK_ChildrensBook_ColoringBook>{BOOK_label} has been completly colored in by {PAWN_nameDef} and has become trash.</BBLK_ChildrensBook_ColoringBook>
   
   <!-- Benefits Strings -->
-  <BBLK_ChildrensBook_LearnFactor>Learning gain multiplier</BBLK_ChildrensBook_LearnFactor>
   <BBLK_ChildrensBook_LearnJoyFactor>Recreation/Learning gain multiplier</BBLK_ChildrensBook_LearnJoyFactor>
 
+  <!-- Report Strings -->
+  <BBLK_ChildrensBook_coloring>coloring {BOOK_label}</BBLK_ChildrensBook_coloring>
+  
 </LanguageData>

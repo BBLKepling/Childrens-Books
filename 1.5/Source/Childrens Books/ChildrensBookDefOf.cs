@@ -13,9 +13,13 @@ namespace Childrens_Books
 
         [MayRequireBiotech]
         public static InteractionDef BBLK_BabyRead;
+
         [MayRequireBiotech]
         public static ThingDef BBLK_ChildrensBook;
+
+        //Vanilla
         public static ThingDef BBLK_ColoringBook;
+
         [MayRequire("bblkepling.youngathearttrait")]
         public static TraitDef BBLK_BigKid;
     }

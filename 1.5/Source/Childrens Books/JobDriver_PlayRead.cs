@@ -8,6 +8,7 @@ namespace Childrens_Books
 {
     public class JobDriver_PlayRead : JobDriver_BabyPlay
     {
+        private bool isLearningDesire;
         protected Book Book => (Book)base.TargetThingB;
         protected LocalTargetInfo BookTarget => base.TargetB;
 
@@ -15,7 +16,7 @@ namespace Childrens_Books
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            if (base.TryMakePreToilReservations(errorOnFailed) && pawn.Reserve(job.GetTarget(TargetIndex.A), job, 1, -1, null, errorOnFailed)) return pawn.Reserve(job.GetTarget(TargetIndex.B), job, 1, -1, null, errorOnFailed);
+            if (base.TryMakePreToilReservations(errorOnFailed) && pawn.Reserve(job.GetTarget(TargetIndex.A), job, 1, -1, null, errorOnFailed)) return pawn.Reserve(job.GetTarget(TargetIndex.B), job, 1, 1, null, errorOnFailed);
             return false;
         }
         protected override IEnumerable<Toil> MakeNewToils()
@@ -25,13 +26,25 @@ namespace Childrens_Books
             AddFailCondition(() => !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking));
             Toil failIfNoBookInInventory = FailIfNoBookInInventory();
             yield return Toils_Jump.JumpIf(failIfNoBookInInventory, () => !BookTarget.IsValid || pawn.inventory.Contains(Book));
-            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch).FailOnDestroyedNullOrForbidden(TargetIndex.B);
-            yield return Toils_Haul.TakeToInventory(TargetIndex.B, 1).FailOnDestroyedNullOrForbidden(TargetIndex.B);
+            yield return Toils_Goto.GotoCell(Book.PositionHeld, PathEndMode.ClosestTouch).FailOnDestroyedOrNull(TargetIndex.B).FailOnSomeonePhysicallyInteracting(TargetIndex.B);
+            yield return Toils_Haul.StartCarryThing(TargetIndex.B, canTakeFromInventory: true);
+            yield return Toils_General.PutCarriedThingInInventory();
             yield return failIfNoBookInInventory;
             foreach (Toil toil in base.MakeNewToils())
             {
                 yield return toil;
             }
+        }
+        public override void Notify_Starting()
+        {
+            base.Notify_Starting();
+            job.count = 1;
+            isLearningDesire = pawn?.learning != null && pawn.learning.ActiveLearningDesires.Contains(LearningDesireDefOf.Reading);
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref isLearningDesire, "isLearningDesire", defaultValue: false);
         }
 
         protected override IEnumerable<Toil> Play()
@@ -40,13 +53,13 @@ namespace Childrens_Books
             yield return SitInChair();
             yield return PlayToil();
         }
-        private Toil FailIfNoBookInInventory()
+        protected Toil FailIfNoBookInInventory()
         {
             Toil toil = ToilMaker.MakeToil("FailIfNoBookInInventory");
             toil.FailOn(() => !pawn.inventory.Contains(Book));
             return toil;
         }
-        private Toil PlayToil()
+        protected Toil PlayToil()
         {
             Toil toil = ToilMaker.MakeToil("PlayToil");
             toil.defaultCompleteMode = ToilCompleteMode.Never;
@@ -66,6 +79,10 @@ namespace Childrens_Books
                 {
                     roomPlayGainFactor = BabyPlayUtility.GetRoomPlayGainFactors(base.Baby);
                 }
+                if (isLearningDesire)
+                {
+                    LearningUtility.LearningTickCheckEnd(pawn);
+                }
                 if (BabyPlayUtility.PlayTickCheckEnd(base.Baby, pawn, roomPlayGainFactor + Book.JoyFactor - 1, Book))
                 {
                     pawn.jobs.curDriver.ReadyForNextToil();
@@ -74,7 +91,7 @@ namespace Childrens_Books
             ChildcareUtility.MakeBabyPlayAsLongAsToilIsActive(toil, TargetIndex.A);
             return toil;
         }
-        private Toil GoToChair()
+        protected Toil GoToChair()
         {
             Toil toil = ToilMaker.MakeToil("GoToChair");
             toil.initAction = delegate
@@ -93,7 +110,7 @@ namespace Childrens_Books
             return toil;
         }
 
-        private Toil SitInChair()
+        protected Toil SitInChair()
         {
             Toil toil = ToilMaker.MakeToil("SitInChair");
             toil.initAction = delegate
@@ -108,7 +125,7 @@ namespace Childrens_Books
             return toil;
         }
 
-        private bool IsValidReadingChair(Thing t)
+        public bool IsValidReadingChair(Thing t)
         {
             if (t.def.building == null || 
                 !t.def.building.isSittable || 

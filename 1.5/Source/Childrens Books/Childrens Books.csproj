@@ -56,11 +56,13 @@
     <Compile Include="BabyPlayGiver_PlayRead.cs" />
     <Compile Include="BookOutcomeProperties_ChildrensBook.cs" />
     <Compile Include="BookOutcomeProperties_ColoringBook.cs" />
+    <Compile Include="Book_PawnReadNow_Patch.cs" />
     <Compile Include="ChildrensBookDefOf.cs" />
     <Compile Include="ChildrensBookMod.cs" />
     <Compile Include="ChildrensBookSettings.cs" />
     <Compile Include="HarmonyInit.cs" />
     <Compile Include="JobDriver_PlayRead.cs" />
+    <Compile Include="Read_TryGiveJob_Patch.cs" />
     <Compile Include="LearningUtility_LearningRateFactor_Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadingOutcomeDoerChildrensBook.cs" />

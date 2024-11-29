@@ -34,15 +34,23 @@ namespace Childrens_Books
             book = null;
             TmpCandidates.Clear();
             TmpCandidates.AddRange(from thing in pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.Book)
-                                   where thing.def == ChildrensBookDefOf.BBLK_ChildrensBook && pawn.CanReserveAndReach(thing, PathEndMode.Touch, Danger.Some)
+                                   where IsValidBook(thing, pawn)
                                    select thing);
             TmpCandidates.AddRange(from thing in pawn.Map.listerThings.GetThingsOfType<Building_Bookcase>().SelectMany((Building_Bookcase x) => x.HeldBooks)
-                                   where thing.def == ChildrensBookDefOf.BBLK_ChildrensBook && pawn.CanReserveAndReach(thing, PathEndMode.Touch, Danger.Some)
+                                   where IsValidBook(thing, pawn)
                                    select thing);
             if (TmpCandidates.NullOrEmpty()) return false;
             book = (Book)TmpCandidates.RandomElement();
             TmpCandidates.Clear();
             return true;
+        }
+        private static bool IsValidBook(Thing thing, Pawn pawn)
+        {
+            if (thing is Book && !thing.IsForbiddenHeld(pawn) && thing.def == ChildrensBookDefOf.BBLK_ChildrensBook  && pawn.CanReserveAndReach(thing, PathEndMode.Touch, Danger.None))
+            {
+                return thing.IsPoliticallyProper(pawn);
+            }
+            return false;
         }
     }
 }
