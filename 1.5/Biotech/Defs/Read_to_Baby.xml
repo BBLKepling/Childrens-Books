@@ -23,10 +23,39 @@
       <rulesStrings>
         <li>r_logentry->[INITIATOR_nameDef] [action] made [RECIPIENT_nameDef] [reaction].</li>
 
-        <li>action(p=4)->reading aloud</li>
-        <li>action->acting out a part of the book</li>
-        <li>action->singing a song from the book</li>
+        <li>action(p=4)->[subsubaction] aloud</li>
+        <li>action(p=5)->[subaction]</li>
+        <li>action(p=5)->[subaction] from the book</li>
+        <li>action(p=5)->[subaction] in a [tone] voice</li>
+        <li>action->pointing to a picture in the book</li>
+        <li>action(p=0.5)->turning a page in the book</li>
+
+        <li>subaction->acting out a part</li>
+        <li>subaction(p=4)->[subsubaction]</li>
 		
+        <li>subsubaction(p=2)->reading</li>
+        <li>subsubaction->singing a song</li>
+        <li>subsubaction->reciting a poem</li>
+
+        <li>tone->airy</li>
+        <li>tone->booming</li>
+        <li>tone->breathy</li>
+        <li>tone->bubbly</li>
+        <li>tone->cheerful</li>
+        <li>tone->childish</li>
+        <li>tone->coarse</li>
+        <li>tone->croaky</li>
+        <li>tone->dry</li>
+        <li>tone->friendly</li>
+        <li>tone->funny</li>
+        <li>tone->gentle</li>
+        <li>tone->joyful</li>
+        <li>tone->playful</li>
+        <li>tone->silly</li>
+        <li>tone->soft</li>
+        <li>tone->strong</li>
+        <li>tone->velvety</li>
+
         <li>reaction->giggle</li>
         <li>reaction->smile</li>
         <li>reaction->squirm with joy</li>
@@ -36,7 +65,7 @@
         <li>reaction->squeal</li>
         <li>reaction->burp</li>
         <li>reaction->stare in fascination</li>
-
+        <li>reaction->bounce up and down</li>
       </rulesStrings>
     </logRulesInitiator>
   </InteractionDef>
