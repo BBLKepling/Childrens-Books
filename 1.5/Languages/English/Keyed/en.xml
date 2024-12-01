@@ -27,5 +27,6 @@
 
   <!-- Report Strings -->
   <BBLK_ChildrensBook_coloring>coloring {BOOK_label}</BBLK_ChildrensBook_coloring>
+  <BBLK_ChildrensBook_Listen>listening to {PAWN_nameDef}</BBLK_ChildrensBook_Listen>
   
 </LanguageData>

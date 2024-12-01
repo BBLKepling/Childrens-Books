@@ -69,5 +69,26 @@
       </rulesStrings>
     </logRulesInitiator>
   </InteractionDef>
-
+<!--
+Needs taleClass and rulesStrings
+  <TaleDef>
+    <defName>BBLK_BabyRead_Tale</defName>
+    <label>baby read to</label>
+    <taleClass>Childrens_Books.Tale_DoublePawnAndThing</taleClass>
+    <type>Volatile</type>
+    <firstPawnSymbol>READER</firstPawnSymbol>
+    <secondPawnSymbol>CHILD</secondPawnSymbol>
+    <defSymbol>BOOK</defSymbol>
+    <defType>ThingDef</defType>
+    <baseInterest>1</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[READER_nameDef] [CHILD_nameDef] [BOOK_label]</li>
+        <li>image-></li>
+        <li>circumstance_phrase-></li>
+        <li>desc_sentence-></li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+-->
 </Defs>

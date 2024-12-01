@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using System;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
@@ -8,6 +7,10 @@ namespace Childrens_Books
 {
     public class JobDriver_PlayRead : JobDriver_BabyPlay
     {
+        private bool hasInInventory;
+
+        private bool carrying;
+
         private bool isLearningDesire;
         protected Book Book => (Book)base.TargetThingB;
         protected LocalTargetInfo BookTarget => base.TargetB;
@@ -16,37 +19,52 @@ namespace Childrens_Books
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            if (base.TryMakePreToilReservations(errorOnFailed) && pawn.Reserve(job.GetTarget(TargetIndex.A), job, 1, -1, null, errorOnFailed)) return pawn.Reserve(job.GetTarget(TargetIndex.B), job, 1, 1, null, errorOnFailed);
-            return false;
+            return pawn.Reserve(job.GetTarget(TargetIndex.A), job, 1, -1, null, errorOnFailed) && pawn.Reserve(job.GetTarget(TargetIndex.B), job, 1, 1, null, errorOnFailed);
+        }
+        public override void Notify_Starting()
+        {
+            base.Notify_Starting();
+            job.count = 1;
+            hasInInventory = pawn.inventory != null && pawn.inventory.Contains(Book);
+            carrying = pawn?.carryTracker.CarriedThing == Book;
+            isLearningDesire = pawn?.learning != null && pawn.learning.ActiveLearningDesires.Contains(LearningDesireDefOf.Reading);
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref hasInInventory, "hasInInventory", defaultValue: false);
+            Scribe_Values.Look(ref carrying, "carrying", defaultValue: false);
+            Scribe_Values.Look(ref isLearningDesire, "isLearningDesire", defaultValue: false);
         }
         protected override IEnumerable<Toil> MakeNewToils()
         {
+            SetFinalizerJob(delegate (JobCondition condition)
+            {
+                if (!pawn.inventory.Contains(Book))
+                {
+                    return null;
+                }
+                pawn.inventory.DropCount(Book.def, 1);
+                return null;
+            });
             AddFailCondition(() => !Baby.health.capacities.CapableOf(PawnCapacityDefOf.Hearing));
+            AddFailCondition(() => !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation));
             AddFailCondition(() => !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight));
             AddFailCondition(() => !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking));
             Toil failIfNoBookInInventory = FailIfNoBookInInventory();
             yield return Toils_Jump.JumpIf(failIfNoBookInInventory, () => !BookTarget.IsValid || pawn.inventory.Contains(Book));
-            yield return Toils_Goto.GotoCell(Book.PositionHeld, PathEndMode.ClosestTouch).FailOnDestroyedOrNull(TargetIndex.B).FailOnSomeonePhysicallyInteracting(TargetIndex.B);
-            yield return Toils_Haul.StartCarryThing(TargetIndex.B, canTakeFromInventory: true);
-            yield return Toils_General.PutCarriedThingInInventory();
+            if (!carrying && !hasInInventory)
+            {
+                yield return Toils_Goto.GotoCell(Book.PositionHeld, PathEndMode.ClosestTouch).FailOnDestroyedOrNull(TargetIndex.B).FailOnSomeonePhysicallyInteracting(TargetIndex.B);
+                yield return Toils_Haul.StartCarryThing(TargetIndex.B, canTakeFromInventory: true);
+            }
+            if (!hasInInventory) yield return Toils_General.PutCarriedThingInInventory();
             yield return failIfNoBookInInventory;
             foreach (Toil toil in base.MakeNewToils())
             {
                 yield return toil;
             }
         }
-        public override void Notify_Starting()
-        {
-            base.Notify_Starting();
-            job.count = 1;
-            isLearningDesire = pawn?.learning != null && pawn.learning.ActiveLearningDesires.Contains(LearningDesireDefOf.Reading);
-        }
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Values.Look(ref isLearningDesire, "isLearningDesire", defaultValue: false);
-        }
-
         protected override IEnumerable<Toil> Play()
         {
             yield return GoToChair();
@@ -67,9 +85,14 @@ namespace Childrens_Books
             toil.WithEffect(EffecterDefOf.PlayStatic, TargetIndex.A);
             AddFinishAction(delegate
             {
-                pawn.inventory.DropCount(Book.def, 1);
+                //Needs DefOf
+                //TaleRecorder.RecordTale(ChildrensBookDefOf.BBLK_BabyRead_Tale, pawn, Child);
             });
-            toil.tickAction = (Action)Delegate.Combine(toil.tickAction, (Action)delegate
+            toil.initAction = delegate
+            {
+                Baby.CurJob.reportStringOverride = "BBLK_ChildrensBook_Listen".Translate(pawn.Named("PAWN"));
+            };
+            toil.tickAction = delegate
             {
                 if (Find.TickManager.TicksGame % 600 == 0)
                 {
@@ -77,17 +100,17 @@ namespace Childrens_Books
                 }
                 if (roomPlayGainFactor < 0f)
                 {
-                    roomPlayGainFactor = BabyPlayUtility.GetRoomPlayGainFactors(base.Baby);
+                    roomPlayGainFactor = BabyPlayUtility.GetRoomPlayGainFactors(base.Baby) + Book.JoyFactor - 1;
                 }
                 if (isLearningDesire)
                 {
                     LearningUtility.LearningTickCheckEnd(pawn);
                 }
-                if (BabyPlayUtility.PlayTickCheckEnd(base.Baby, pawn, roomPlayGainFactor + Book.JoyFactor - 1, Book))
+                if (BabyPlayUtility.PlayTickCheckEnd(base.Baby, pawn, roomPlayGainFactor, Book))
                 {
                     pawn.jobs.curDriver.ReadyForNextToil();
                 }
-            });
+            };
             ChildcareUtility.MakeBabyPlayAsLongAsToilIsActive(toil, TargetIndex.A);
             return toil;
         }

@@ -60,13 +60,17 @@
     <Compile Include="ChildrensBookDefOf.cs" />
     <Compile Include="ChildrensBookMod.cs" />
     <Compile Include="ChildrensBookSettings.cs" />
+    <Compile Include="ChildrensBookUtility.cs" />
     <Compile Include="HarmonyInit.cs" />
+    <Compile Include="JobDriver_BedTimeListen.cs" />
+    <Compile Include="JobDriver_BedTimeStory.cs" />
     <Compile Include="JobDriver_PlayRead.cs" />
     <Compile Include="Read_TryGiveJob_Patch.cs" />
     <Compile Include="LearningUtility_LearningRateFactor_Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadingOutcomeDoerChildrensBook.cs" />
     <Compile Include="ReadingOutcomeDoerColoringBook.cs" />
+    <Compile Include="WorkGiver_BedTimeStory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
