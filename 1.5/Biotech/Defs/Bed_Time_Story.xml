@@ -159,14 +159,12 @@
         <li>reaction->smile</li>
         <li>reaction->squirm with joy</li>
         <li>reaction->laugh</li>
-        <li>reaction->squeal</li>
         <li>reaction->stare in fascination</li>
-        <li>reaction->bounce up and down</li>
+        <li>reaction->yawn</li>
       </rulesStrings>
     </logRulesInitiator>
   </InteractionDef>
-<!--
-Needs taleClass and rulesStrings
+
   <TaleDef>
     <defName>BBLK_BedTimeStory_Tale</defName>
     <label>bed time story told</label>
@@ -174,17 +172,38 @@ Needs taleClass and rulesStrings
     <type>Volatile</type>
     <firstPawnSymbol>READER</firstPawnSymbol>
     <secondPawnSymbol>CHILD</secondPawnSymbol>
-    <defSymbol>BOOK</defSymbol>
-    <defType>ThingDef</defType>
     <baseInterest>1</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[READER_nameDef] [CHILD_nameDef] [BOOK_label]</li>
-        <li>image-></li>
-        <li>circumstance_phrase-></li>
-        <li>desc_sentence-></li>
+        <li>tale_noun->[READER_nameFull] reading [THING_title] to [CHILD_nameFull]</li> <!-- "this refers to" -->
+        <li>tale_noun->[CHILD_nameFull] listening to [READER_nameFull] read [THING_title]</li>
+        <li>image->[READER_nameDef] reading [THING_title] to [CHILD_nameDef] [circumstance_group]</li> <!-- 1st -->
+        <li>image->[CHILD_nameFull] listening to [READER_nameFull] read [THING_title] [circumstance_group]</li>
+        <li>circumstance_phrase->as [CHILD_pronoun] gets ready to sleep</li> <!-- 2nd -->
+        <li>desc_sentence->[CHILD_nameDef] is [reaction].</li> <!-- 3rd -->
+        <li>desc_sentence->[READER_nameDef] is [actionA].</li>
+        <li>desc_sentence->[CHILD_nameDef] is [reaction] while [READER_nameDef] [actionB].</li>
+		
+        <li>actionA->pointing to a picture in the book</li>
+        <li>actionA->turning a page in the book</li>
+        <li>actionA->singing a song from the book</li>
+        <li>actionA->reciting a poem from the book</li>
+
+        <li>actionB->points to a picture in the book</li>
+        <li>actionB->turns a page in the book</li>
+        <li>actionB->sings a song from the book</li>
+        <li>actionB->recites a poem from the book</li>
+
+        <li>reaction->giggling</li>
+        <li>reaction->smiling</li>
+        <li>reaction->squirming with joy</li>
+        <li>reaction->laughing</li>
+        <li>reaction->staring in fascination</li>
+        <li>reaction->dozing off</li>
+        <li>reaction->yawning</li>
+        <li>reaction->sleeping</li>
       </rulesStrings>
     </rulePack>
   </TaleDef>
--->
+
 </Defs>

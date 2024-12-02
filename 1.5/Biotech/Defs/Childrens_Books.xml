@@ -37,6 +37,7 @@
     </comps>
   </ThingDef>
 
+        <!-- Do not use [Mechanoid] or [Character] as they will add Sexbot, we don't want that -->
   <RulePackDef>
     <defName>BBLK_ChildrensBook_Namer</defName>
     <include>
@@ -46,29 +47,36 @@
     <rulePack>
       <rulesStrings>
         <!-- Roots -->
-        <li>title->The [story] of [charName]</li>
-        <li>title->The [place] of [charName]</li>
-        <li>title->[charName]'s [story]</li>
-        <li>title->[charName]'s [place]</li>
-        <li>title->[charName]'s [adjective] [place]</li>
+        <li>title->[charPrefix] [story] of [charName]</li>
+        <li>title->[charPrefix] [place] of [charName]</li>
+        <li>title(p=0.5)->[charName]'s [story]</li>
+        <li>title(p=0.5)->[charName]'s [place]</li>
+        <li>title(p=0.5)->[charName]'s [adjective] [story]</li>
+        <li>title(p=0.5)->[charName]'s [adjective] [place]</li>
         <li>title->[charName] [linkagePlace] [place]</li>
-        <li>title->The [adjective] [Animal]</li>
-        <li>title->The [adjective] [place]</li>
-        <li>title->The [adjective] [Character]</li>
-        <li>title->The [Color] [Animal]</li>
-        <li>title->The [Color] [place]</li>
-        <li>title->The [Color] [Character]</li>
+        <li>title(p=0.25)->[charPrefix] [adjective] [place]</li>
+        <li>title(p=0.25)->[charPrefix] [adjective] [PersonJob]</li>
+        <li>title(p=0.25)->[charPrefix] [adjective] [Animal]</li>
+        <li>title(p=0.25)->[charPrefix] [adjective] [Enemy]</li>
+        <!-- Dr Suess -->
+        <li>title(p=0.2)->the [Animal] in the [Apparel]</li>
+        <li>title(p=0.2)->one [Animal], two [Animal], [Color] [Animal], [Color] [Animal]</li>
+        <li>title(p=0.2)->[Color] [food] and [food]</li>
 
 
         <!-- Content -->
-        <li>charName->the [Character]</li>
-        <li>charName->the [Animal]</li>
-        <li>charName(p=5)->[NameAnimalUnisex]</li>
-        <li>charName(p=5)->[NameAnimalMale]</li>
-        <li>charName(p=5)->[NameAnimalFemale]</li>
+        <li>charName(p=4)->[charPrefix] [PersonJob]</li>
+        <li>charName(p=4)->[charPrefix] [Animal]</li>
+        <li>charName(p=4)->[charPrefix] [Enemy]</li>
+        <li>charName(p=4)->[NamerAnimalGenericMale]</li>
+        <li>charName(p=4)->[NamerAnimalGenericFemale]</li>
         <li>charName(p=0.1)->Banana</li>
         <li>charName(p=0.1)->Bottle</li>
         <li>charName(p=0.1)->Elmo</li>
+
+        <li>charPrefix(p=3)->the</li>
+        <li>charPrefix->little</li>
+        <li>charPrefix->big</li>
 
         <li>linkagePlace->in the</li>
         <li>linkagePlace->by the</li>
@@ -77,7 +85,11 @@
         <li>linkagePlace->near the</li>
         <li>linkagePlace->goes to the</li>
 
-        <li>adjective->[AdjectiveAny]</li>
+        <li>adjective(p=10)->[AdjectiveAny]</li>
+        <li>adjective(p=10)->[Color]</li>
+        <li>adjective->gay</li>
+        <li>adjective->purrific</li>
+        <li>adjective(p=0.1)->Octogiraffic</li>
         
         <li>place(p=25)->[TerrainFeature]</li>
         <li>place->Amphitheater</li>
@@ -158,7 +170,6 @@
         <li>story->Fairy Tale</li>
         <li>story->Fantasia</li>
         <li>story->Fantasy</li>
-        <li>story->Fantasy</li>
         <li>story->Imagination</li>
         <li>story->Imaginings</li>
         <li>story->Journey</li>
@@ -169,6 +180,15 @@
         <li>story->Tale</li>
         <li>story->Tales</li>
         <li>story->Whimsy</li>
+
+        <li>food(p=5)->[Vegetable]</li>
+        <li>food->eggs</li>
+        <li>food->steak</li>
+        <li>food->ham</li>
+        <li>food->wings</li>
+        <li>food->drumsticks</li>
+        <li>food(p=0.1)->liver</li>
+        <li>food(p=0.1)->tongue</li>
 
       </rulesStrings>
     </rulePack>
@@ -184,7 +204,6 @@
         
         <!-- Roots -->
         <li>desc->This [writingQualityAdjective] [bookType] [follows] a [PersonJob] as [protagHe] [storyStruggles]. [writingQualitySentence]. [maybe_date]</li>
-        <li>desc->In this [writingQualityAdjective] [bookType], the [author] [tellsAStoryOf] [ANYPAWN_possessive] [storySource]. [writingQualitySentence]. [maybe_date]</li>
 
         <!-- Root: Story struggle variant -->
 		
@@ -209,6 +228,7 @@
 
         <li>opponent->a [AnimalBadass]</li>
         <li>opponent->injustice</li>
+        <li>opponent->a bully</li>
         <li>opponent->fear</li>
         <li>opponent->a dangerous [Enemy]</li>
         <li>opponent->a rival [PersonJob]</li>
@@ -230,7 +250,6 @@
         <li>seeks->doggedly pursues</li>
         <li>seeks->leaves no stone unturned in search of</li>
         <li>seeks->embarks on a quest for</li>
-        <li>seeks->rends [protagHis] flesh while seeking</li>
         <li>seeks->strives to locate</li>
         <li>seeks->diligently seeks out</li>
         <li>seeks->wanders in search of</li>
@@ -238,28 +257,22 @@
 
 
         <li>seekObjective->a mysterious golden cube</li>
-        <li>seekObjective->a demon inside [protagHis] own head</li>
         <li>seekObjective->the best-tasting [Vegetable] in the universe</li>
         <li>seekObjective->a shiny new [Weapon]</li>
         <li>seekObjective->[protagHis] lost pet [Animal]</li>
-        <li>seekObjective->parts to rebuild a destroyed [Mechanoid]</li>
         <li>seekObjective->a [TerrainFeature] that [protagHe] saw in a dream</li>
-        <li>seekObjective->an old flame</li>
-        <li>seekObjective->romantic satisfaction</li>
-        <li>seekObjective->a new kidney to replace [protagHis] own diseased kidney</li>
         <li>seekObjective->food in a vast wasteland</li>
         <li>seekObjective->the warmth and safety of home</li>
         <li>seekObjective->love in a world full of hate</li>
         <li>seekObjective->a long-lost family recipe</li>
-        <li>seekObjective->a childhood toy left behind</li>
+        <li>seekObjective->a toy left behind</li>
         <li>seekObjective->a stolen family heirloom</li>
         <li>seekObjective->a mentor's lost journal</li>
         <li>seekObjective->a rare collectible from [protagHis] favorite series</li>
         <li>seekObjective->the perfect spot for a picnic</li>
         <li>seekObjective->a missing piece from a prized collection</li>
         <li>seekObjective->an apology for a past mistake</li>
-        <li>seekObjective->closure from a past relationship</li>
-        <li>seekObjective->a lost treasure map from childhood</li>
+        <li>seekObjective->a lost treasure map</li>
         <li>seekObjective->a meaningful memento from a deceased loved one</li>
         <li>seekObjective->a recipe for a cure to an illness</li>
         <li>seekObjective->a rare plant for a personal garden</li>
@@ -269,80 +282,6 @@
         <li>seekObjective->an old friend in a new city</li>
         <li>seekObjective->the thrill of a forgotten hobby</li>
         <li>seekObjective->a single moment of pure happiness</li>
-
-
-        <!-- Root: "Author tells a story of" variant -->
-
-        <li>tellsAStoryOf->tells a tale about</li>
-        <li>tellsAStoryOf->goes into detail about</li>
-        <li>tellsAStoryOf->explores a story about</li>
-        <li>tellsAStoryOf->tells a story about</li>
-        <li>tellsAStoryOf->spins a narrative about</li>
-        <li>tellsAStoryOf->paints a picture of</li>
-        <li>tellsAStoryOf->dives deep into</li>
-        <li>tellsAStoryOf->unravels the tale of</li>
-        <li>tellsAStoryOf->reveals the journey of</li>
-        <li>tellsAStoryOf->captures the essence of</li>
-        <li>tellsAStoryOf->sheds light on</li>
-        <li>tellsAStoryOf->weaves together</li>
-        <li>tellsAStoryOf->portrays the experience of</li>
-        <li>tellsAStoryOf->embarks on the narrative of</li>
-        <li>tellsAStoryOf->depicts the story of</li>
-        <li>tellsAStoryOf->touches upon the tale of</li>
-        <li>tellsAStoryOf->presents the story of</li>
-        <li>tellsAStoryOf->conveys the journey of</li>
-        <li>tellsAStoryOf->delves into the story of</li>
-        <li>tellsAStoryOf->illuminates the narrative of</li>
-        <li>tellsAStoryOf->captures the saga of</li>
-        <li>tellsAStoryOf->paints a vivid picture of</li>
-        <li>tellsAStoryOf->weaves the tapestry of</li>
-        <li>tellsAStoryOf->explores the chronicle of</li>
-
-
-        <li>author->author</li>
-        <li>author->[authorTitle] [ANYPAWN_nameIndef]</li>
-        <li>author(p=2)->unnamed [authorTitle]</li>
-
-        <li>authorTitle->author</li>
-        <li>authorTitle->scribe</li>
-        <li>authorTitle->writer</li>
-        <li>authorTitle->poet</li>
-        <li>authorTitle->storyteller</li>
-
-        <li>storySource->personal experiences</li>
-        <li>storySource->youth</li>
-        <li>storySource->childhood</li>
-        <li>storySource->nation</li>
-        <li>storySource->home planet</li>
-        <li>storySource->grandfather</li>
-        <li>storySource->grandmother</li>
-        <li>storySource->experiences in the war</li>
-        <li>storySource->deepest fears</li>
-        <li>storySource->dreams of traveling to the stars</li>
-        <li>storySource->love of fresh [Vegetable]s</li>
-        <li>storySource->time as a [PersonJob]</li>
-        <li>storySource->favorite [Weapon]</li>
-        <li>storySource->experience fighting against [Mechanoid]s</li>
-        <li>storySource->youth growing up in a [Community]</li>
-        <li>storySource->gigantic [BodyPart]</li>
-        <li>storySource->memories of a lost friend</li>
-        <li>storySource->passion for music</li>
-        <li>storySource->curiosity about ancient ruins</li>
-        <li>storySource->attachment to a family heirloom</li>
-        <li>storySource->fascination with a mysterious figure</li>
-        <li>storySource->efforts to preserve a dying language</li>
-        <li>storySource->dreams of inventing something groundbreaking</li>
-        <li>storySource->connection to a mythical creature</li>
-        <li>storySource->affection for a particular landscape</li>
-        <li>storySource->aspirations of becoming a renowned [PersonJob]</li>
-        <li>storySource->struggles with social anxiety</li>
-        <li>storySource->longing for adventure beyond the horizon</li>
-        <li>storySource->bond with a robotic companion</li>
-        <li>storySource->adventures as a pirate in the past</li>
-        <li>storySource->close ties to a secret society</li>
-        <li>storySource->time spent as a nomad</li>
-        <li>storySource->fascination with time travel</li>
-        <li>storySource->connection to a legendary artifact</li>
 
 
         <!-- Writing quality -->
@@ -420,10 +359,10 @@
 
         <!-- Misc rules -->
 
-        <li>bookType(p=4)->childrens book</li>
-        <li>bookType->childrens song book</li>
-        <li>bookType->childrens story</li>
-        <li>bookType->childrens poem</li>
+        <li>bookType(p=4)->children's book</li>
+        <li>bookType->children's song book</li>
+        <li>bookType->children's story</li>
+        <li>bookType->children's poem</li>
 
       </rulesStrings>
     </rulePack>

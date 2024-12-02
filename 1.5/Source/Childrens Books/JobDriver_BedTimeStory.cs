@@ -156,6 +156,7 @@ namespace Childrens_Books
         public bool IsValidReadingChair(Thing t)
         {
             if (t.def.building == null ||
+                t.GetRoom() != Child.GetRoom() ||
                 !t.def.building.isSittable ||
                 !Toils_Ingest.TryFindFreeSittingSpotOnThing(t, pawn, out var _) ||
                 t.IsForbidden(pawn) ||
