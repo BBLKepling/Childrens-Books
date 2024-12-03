@@ -65,6 +65,7 @@
     <Compile Include="JobDriver_BedTimeListen.cs" />
     <Compile Include="JobDriver_BedTimeStory.cs" />
     <Compile Include="JobDriver_PlayRead.cs" />
+    <Compile Include="LearningGiver_Reading_TryGiveJob_Patch.cs" />
     <Compile Include="Read_TryGiveJob_Patch.cs" />
     <Compile Include="LearningUtility_LearningRateFactor_Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

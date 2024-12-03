@@ -130,8 +130,7 @@ namespace Childrens_Books
                 if (ticksLeftThisToil > 1000) return;
                 Book.TryGetQuality(out QualityCategory qc);
                 Child.needs.mood.thoughts.memories.TryGainMemory(ThoughtMaker.MakeThought(ChildrensBookDefOf.BBLK_BedTimeStory_Thought, (int)qc));
-                //Needs DefOf
-                //TaleRecorder.RecordTale(ChildrensBookDefOf.BBLK_BedTimeStory_Tale, pawn, Child);
+                TaleRecorder.RecordTale(ChildrensBookDefOf.BBLK_BedTimeStory_Tale, pawn, Child);
             });
             return toil;
         }

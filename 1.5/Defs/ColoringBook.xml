@@ -39,9 +39,6 @@
 
   <RulePackDef>
     <defName>BBLK_ColoringBook_Namer</defName>
-    <include>
-      <li>ArtNameUtility</li>
-    </include>
     <rulePack>
       <rulesStrings>
         <li>title->Let's [artStyle] [artTargetA]</li>

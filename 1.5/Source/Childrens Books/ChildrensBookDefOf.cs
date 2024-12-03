@@ -24,6 +24,15 @@ namespace Childrens_Books
         public static JobDef BBLK_Job_BedTimeListen;
 
         [MayRequireBiotech]
+        public static JobDef BBLK_Job_PlayRead;
+
+        [MayRequireBiotech]
+        public static TaleDef BBLK_BabyRead_Tale;
+
+        [MayRequireBiotech]
+        public static TaleDef BBLK_BedTimeStory_Tale;
+
+        [MayRequireBiotech]
         public static ThingDef BBLK_ChildrensBook;
 
         //Vanilla

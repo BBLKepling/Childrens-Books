@@ -41,7 +41,6 @@
   <RulePackDef>
     <defName>BBLK_ChildrensBook_Namer</defName>
     <include>
-      <li>ArtNameUtility</li>
       <li>NamerAnimalUtility</li>
     </include>
     <rulePack>
@@ -54,29 +53,44 @@
         <li>title(p=0.5)->[charName]'s [adjective] [story]</li>
         <li>title(p=0.5)->[charName]'s [adjective] [place]</li>
         <li>title->[charName] [linkagePlace] [place]</li>
-        <li>title(p=0.25)->[charPrefix] [adjective] [place]</li>
-        <li>title(p=0.25)->[charPrefix] [adjective] [PersonJob]</li>
-        <li>title(p=0.25)->[charPrefix] [adjective] [Animal]</li>
-        <li>title(p=0.25)->[charPrefix] [adjective] [Enemy]</li>
-        <!-- Dr Suess -->
+        <li>title(p=0.5)->[charPrefix] [adjective] [place]</li>
+        <li>title(p=0.5)->[charPrefix] [adjective] [Animal]</li>
         <li>title(p=0.2)->the [Animal] in the [Apparel]</li>
         <li>title(p=0.2)->one [Animal], two [Animal], [Color] [Animal], [Color] [Animal]</li>
-        <li>title(p=0.2)->[Color] [food] and [food]</li>
+        <li>title(p=0.2)->[Color] [foodP] and [foodS]</li>
 
 
         <!-- Content -->
-        <li>charName(p=4)->[charPrefix] [PersonJob]</li>
-        <li>charName(p=4)->[charPrefix] [Animal]</li>
-        <li>charName(p=4)->[charPrefix] [Enemy]</li>
-        <li>charName(p=4)->[NamerAnimalGenericMale]</li>
-        <li>charName(p=4)->[NamerAnimalGenericFemale]</li>
-        <li>charName(p=0.1)->Banana</li>
-        <li>charName(p=0.1)->Bottle</li>
-        <li>charName(p=0.1)->Elmo</li>
+        <li>charName(p=4)->[charPrefix] [Animal][maybeSufix]</li>
+        <li>charName(p=4)->[NameAnimalFemale][maybeTitle]</li>
+        <li>charName(p=4)->[NameAnimalMale][maybeTitle]</li>
+        <li>charName(p=4)->[NameAnimalUnisex][maybeTitle]</li>
+        <li>charName->[easterEggs][maybeTitle]</li>
+		
+        <li>maybeTitle(p=2)-></li>
+        <li>maybeTitle-> the [Animal][maybeSufix]</li>
+
+        <li>easterEggs->Banana</li>
+        <li>easterEggs->Bottle</li>
+        <li>easterEggs->Daniel</li>
+        <li>easterEggs->Elmo</li>
+        <li>easterEggs->Erin</li>
+        <li>easterEggs->Kikohi</li>
+        <li>easterEggs->Oskar</li>
+        <li>easterEggs->Phil</li>
+        <li>easterEggs->Sarah</li>
+        <li>easterEggs->Sarg</li>
+        <li>easterEggs->Ty</li>
 
         <li>charPrefix(p=3)->the</li>
         <li>charPrefix->little</li>
         <li>charPrefix->big</li>
+        <li>charPrefix(p=0.5)->super</li>
+
+        <li>maybeSufix(p=3)-></li>
+        <li>maybeSufix->boy</li>
+        <li>maybeSufix->girl</li>
+        <li>maybeSufix(p=0.5)->kin</li>
 
         <li>linkagePlace->in the</li>
         <li>linkagePlace->by the</li>
@@ -181,14 +195,23 @@
         <li>story->Tales</li>
         <li>story->Whimsy</li>
 
-        <li>food(p=5)->[Vegetable]</li>
-        <li>food->eggs</li>
-        <li>food->steak</li>
-        <li>food->ham</li>
-        <li>food->wings</li>
-        <li>food->drumsticks</li>
-        <li>food(p=0.1)->liver</li>
-        <li>food(p=0.1)->tongue</li>
+        <li>foodS(p=5)->[Vegetable]</li>
+        <li>foodS->eggs</li>
+        <li>foodS->steak</li>
+        <li>foodS->ham</li>
+        <li>foodS->wings</li>
+        <li>foodS->drumstick</li>
+        <li>foodS(p=0.1)->liver</li>
+        <li>foodS(p=0.1)->tongue</li>
+
+        <li>foodP(p=5)->[Vegetable]s</li>
+        <li>foodP->eggs</li>
+        <li>foodP->steak</li>
+        <li>foodP->ham</li>
+        <li>foodP->wings</li>
+        <li>foodP->drumsticks</li>
+        <li>foodP(p=0.1)->livers</li>
+        <li>foodP(p=0.1)->tongues</li>
 
       </rulesStrings>
     </rulePack>
