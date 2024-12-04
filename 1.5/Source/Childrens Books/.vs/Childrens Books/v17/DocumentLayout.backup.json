@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\jobdriver_playread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:jobdriver_playread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\jobdriver_bedtimestory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:jobdriver_bedtimestory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\harmonyinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:harmonyinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\read_trygivejob_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:read_trygivejob_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\childrensbookdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:childrensbookdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\learninggiver_reading_trygivejob_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,28 +27,32 @@
       "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:learningutility_learningratefactor_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\jobdriver_bedtimelisten.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:jobdriver_bedtimelisten.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\read_trygivejob_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:read_trygivejob_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\jobdriver_bedtimestory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:jobdriver_bedtimestory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\readingoutcomedoercoloringbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:readingoutcomedoercoloringbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\jobdriver_playread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:jobdriver_playread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\childrensbookdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:childrensbookdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\book_pawnreadnow_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:book_pawnreadnow_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\readingoutcomedoerchildrensbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:readingoutcomedoerchildrensbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\tale_doublepawnandthing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:tale_doublepawnandthing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\workgiver_bedtimestory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:workgiver_bedtimestory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\jobdriver_bedtimelisten.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:jobdriver_bedtimelisten.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\childrens-books-main\\1.5\\source\\childrens books\\book_pawnreadnow_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:book_pawnreadnow_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\babyplaygiver_playread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\childrensbookutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:childrensbookutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\workgiver_bedtimestory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83E0D503-7BA7-4AF6-A1DE-F32A437B53E5}|Childrens Books.csproj|solutionrelative:workgiver_bedtimestory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,50 +70,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ChildrensBookDefOf.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\ChildrensBookDefOf.cs",
-              "RelativeDocumentMoniker": "ChildrensBookDefOf.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\ChildrensBookDefOf.cs",
-              "RelativeToolTip": "ChildrensBookDefOf.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwB0AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T03:34:19.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LearningUtility_LearningRateFactor_Patch.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\LearningUtility_LearningRateFactor_Patch.cs",
-              "RelativeDocumentMoniker": "LearningUtility_LearningRateFactor_Patch.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\LearningUtility_LearningRateFactor_Patch.cs",
-              "RelativeToolTip": "LearningUtility_LearningRateFactor_Patch.cs",
+              "Title": "ReadingOutcomeDoerColoringBook.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\ReadingOutcomeDoerColoringBook.cs",
+              "RelativeDocumentMoniker": "ReadingOutcomeDoerColoringBook.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\ReadingOutcomeDoerColoringBook.cs",
+              "RelativeToolTip": "ReadingOutcomeDoerColoringBook.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T02:11:59.046Z",
+              "WhenOpened": "2024-12-03T03:46:46.212Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Read_TryGiveJob_Patch.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\Read_TryGiveJob_Patch.cs",
-              "RelativeDocumentMoniker": "Read_TryGiveJob_Patch.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\Read_TryGiveJob_Patch.cs",
-              "RelativeToolTip": "Read_TryGiveJob_Patch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T01:58:26.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "LearningGiver_Reading_TryGiveJob_Patch.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\LearningGiver_Reading_TryGiveJob_Patch.cs",
               "RelativeDocumentMoniker": "LearningGiver_Reading_TryGiveJob_Patch.cs",
@@ -118,33 +100,98 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "JobDriver_PlayRead.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\JobDriver_PlayRead.cs",
-              "RelativeDocumentMoniker": "JobDriver_PlayRead.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\JobDriver_PlayRead.cs",
-              "RelativeToolTip": "JobDriver_PlayRead.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAYwFcAAABNAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "HarmonyInit.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\HarmonyInit.cs",
+              "RelativeDocumentMoniker": "HarmonyInit.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\HarmonyInit.cs",
+              "RelativeToolTip": "HarmonyInit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T02:01:36.801Z",
+              "WhenOpened": "2024-12-03T01:57:23.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "JobDriver_BedTimeStory.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\JobDriver_BedTimeStory.cs",
               "RelativeDocumentMoniker": "JobDriver_BedTimeStory.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\JobDriver_BedTimeStory.cs",
               "RelativeToolTip": "JobDriver_BedTimeStory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHsAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAYwHsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T04:42:22.222Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "JobDriver_PlayRead.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\JobDriver_PlayRead.cs",
+              "RelativeDocumentMoniker": "JobDriver_PlayRead.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\JobDriver_PlayRead.cs",
+              "RelativeToolTip": "JobDriver_PlayRead.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAkwFcAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T02:01:36.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChildrensBookDefOf.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\ChildrensBookDefOf.cs",
+              "RelativeDocumentMoniker": "ChildrensBookDefOf.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\ChildrensBookDefOf.cs",
+              "RelativeToolTip": "ChildrensBookDefOf.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwB0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T03:34:19.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Read_TryGiveJob_Patch.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\Read_TryGiveJob_Patch.cs",
+              "RelativeDocumentMoniker": "Read_TryGiveJob_Patch.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\Read_TryGiveJob_Patch.cs",
+              "RelativeToolTip": "Read_TryGiveJob_Patch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T01:58:26.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LearningUtility_LearningRateFactor_Patch.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\LearningUtility_LearningRateFactor_Patch.cs",
+              "RelativeDocumentMoniker": "LearningUtility_LearningRateFactor_Patch.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\LearningUtility_LearningRateFactor_Patch.cs",
+              "RelativeToolTip": "LearningUtility_LearningRateFactor_Patch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T02:11:59.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReadingOutcomeDoerChildrensBook.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\ReadingOutcomeDoerChildrensBook.cs",
+              "RelativeDocumentMoniker": "ReadingOutcomeDoerChildrensBook.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\ReadingOutcomeDoerChildrensBook.cs",
+              "RelativeToolTip": "ReadingOutcomeDoerChildrensBook.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T03:32:01.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "JobDriver_BedTimeListen.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\JobDriver_BedTimeListen.cs",
               "RelativeDocumentMoniker": "JobDriver_BedTimeListen.cs",
@@ -157,28 +204,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HarmonyInit.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\HarmonyInit.cs",
-              "RelativeDocumentMoniker": "HarmonyInit.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\HarmonyInit.cs",
-              "RelativeToolTip": "HarmonyInit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "WorkGiver_BedTimeStory.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\WorkGiver_BedTimeStory.cs",
+              "RelativeDocumentMoniker": "WorkGiver_BedTimeStory.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\WorkGiver_BedTimeStory.cs",
+              "RelativeToolTip": "WorkGiver_BedTimeStory.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T01:57:23.411Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Book_PawnReadNow_Patch.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\Book_PawnReadNow_Patch.cs",
-              "RelativeDocumentMoniker": "Book_PawnReadNow_Patch.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\Book_PawnReadNow_Patch.cs",
-              "RelativeToolTip": "Book_PawnReadNow_Patch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T02:05:35.969Z",
+              "WhenOpened": "2024-11-30T04:42:09.522Z",
               "EditorCaption": ""
             },
             {
@@ -196,7 +230,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
+              "Title": "Book_PawnReadNow_Patch.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\Book_PawnReadNow_Patch.cs",
+              "RelativeDocumentMoniker": "Book_PawnReadNow_Patch.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\Book_PawnReadNow_Patch.cs",
+              "RelativeToolTip": "Book_PawnReadNow_Patch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T02:05:35.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "ChildrensBookUtility.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\ChildrensBookUtility.cs",
               "RelativeDocumentMoniker": "ChildrensBookUtility.cs",
@@ -209,20 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "WorkGiver_BedTimeStory.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\WorkGiver_BedTimeStory.cs",
-              "RelativeDocumentMoniker": "WorkGiver_BedTimeStory.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\WorkGiver_BedTimeStory.cs",
-              "RelativeToolTip": "WorkGiver_BedTimeStory.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwB8AAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T04:42:09.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "BabyPlayGiver_PlayRead.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Childrens-Books-main\\1.5\\Source\\Childrens Books\\BabyPlayGiver_PlayRead.cs",
               "RelativeDocumentMoniker": "BabyPlayGiver_PlayRead.cs",

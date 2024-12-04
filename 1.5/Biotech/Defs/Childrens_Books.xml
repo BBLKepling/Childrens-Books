@@ -54,43 +54,114 @@
         <li>title(p=0.5)->[charName]'s [adjective] [place]</li>
         <li>title->[charName] [linkagePlace] [place]</li>
         <li>title(p=0.5)->[charPrefix] [adjective] [place]</li>
-        <li>title(p=0.5)->[charPrefix] [adjective] [Animal]</li>
-        <li>title(p=0.2)->the [Animal] in the [Apparel]</li>
-        <li>title(p=0.2)->one [Animal], two [Animal], [Color] [Animal], [Color] [Animal]</li>
-        <li>title(p=0.2)->[Color] [foodP] and [foodS]</li>
+        <li>title(p=0.5)->[charPrefix] [adjective] [Animal][maybeSufix]</li>
+        <!-- Dr. Suess -->
+        <li>title(p=0.2)->the [Animal][maybeSufix] in the [storage]</li>
+        <li>title(p=0.2)->one [Animal][maybeSufix], two [Animal][maybeSufix], [Color] [Animal][maybeSufix], [Color] [Animal][maybeSufix]</li>
+        <li>title(p=0.2)->[Color] [food] and [food]</li>
 
 
         <!-- Content -->
-        <li>charName(p=4)->[charPrefix] [Animal][maybeSufix]</li>
-        <li>charName(p=4)->[NameAnimalFemale][maybeTitle]</li>
-        <li>charName(p=4)->[NameAnimalMale][maybeTitle]</li>
-        <li>charName(p=4)->[NameAnimalUnisex][maybeTitle]</li>
-        <li>charName->[easterEggs][maybeTitle]</li>
+        <li>charName->[charPrefix] [xeno]</li>
+        <li>charName->[charPrefix] [Animal][maybeSufix]</li>
+        <li>charName->[NameAnimalFemale][maybeTitle]</li>
+        <li>charName->[NameAnimalMale][maybeTitle]</li>
+        <li>charName->[NameAnimalUnisex][maybeTitle]</li>
+        <li>charName(p=0.3)->[easterEggs][maybeTitle]</li>
 		
-        <li>maybeTitle(p=2)-></li>
-        <li>maybeTitle-> the [Animal][maybeSufix]</li>
+        <li>maybeTitle(p=4)-></li>
+        <li>maybeTitle-> [charPrefix] [xeno]</li>
+        <li>maybeTitle-> [charPrefix] [Animal][maybeSufix]</li>
 
+        <li>storage(p=10)->[Apparel]</li>
+        <li>storage->attic</li>
+        <li>storage->basement</li>
+        <li>storage->box</li>
+        <li>storage->closet</li>
+        <li>storage->kitchen</li>
+        <li>storage->garage</li>
+        <li>storage->pantry</li>
+
+        <li>xeno->android</li>
+        <li MayRequire="vanillaracesexpanded.archon">xeno->archon</li>
+        <li>xeno->catgirl</li>
+        <li>xeno->dirtmole</li>
+        <li>xeno->dwarf</li>
+        <li>xeno->elf</li>
+        <li>xeno->fairy</li>
+        <li MayRequire="vanillaracesexpanded.fungoid">xeno->fungoid</li>
+        <li>xeno->genie</li>
+        <li>xeno->gnome</li>
+        <li>xeno->highmate</li>
+        <li>xeno->hobbit</li>
+        <li>xeno->hussar</li>
+        <li>xeno->impid</li>
+        <li MayRequire="vanillaracesexpanded.insector">xeno->insector</li>
+        <li MayRequire="vanillaracesexpanded.lycanthrope">xeno->lycanthope</li>
+        <li>xeno->neanderthal</li>
+        <li>xeno->pixie</li>
+        <li>xeno->pigskin</li>
+        <li MayRequire="vanillaracesexpanded.phytokin">xeno->phytokin</li>
+        <li>xeno->sanguophage</li>
+        <li>xeno->saurid</li>
+        <li>xeno->waster</li>
+        <li>xeno->yttakin</li>
+		
+        <li>easterEggs->Aelanna</li>
+        <li>easterEggs->Andreas</li>
         <li>easterEggs->Banana</li>
         <li>easterEggs->Bottle</li>
-        <li>easterEggs->Daniel</li>
+        <li>easterEggs->Dub</li>
         <li>easterEggs->Elmo</li>
+        <li>easterEggs->Evelyn</li>
+        <li>easterEggs(p=0.5)->Karim</li>
+        <li>easterEggs(p=0.5)->Rocketman</li>
+        <li>easterEggs(p=0.5)->Kay</li>
+        <li>easterEggs(p=0.5)->Kayedon</li>
+        <li>easterEggs->Lucy</li>
+        <li>easterEggs->Mlie</li>
+        <li>easterEggs->Octogiraffe</li>
+        <li>easterEggs(p=0.5)->Rick</li>
+        <li>easterEggs(p=0.5)->Ranger Rick</li>
+        <li>easterEggs->Sarah</li>
+        <li>easterEggs->Sierra</li>
+        <li>easterEggs->Steve</li>
+        <li>easterEggs(p=0.5)->Syr</li>
+        <li>easterEggs(p=0.5)->Syrchalis</li>
+        <li>easterEggs(p=0.5)->Theki</li>
+        <li>easterEggs(p=0.5)->Thekiborg</li>
+        <li>easterEggs->Zaljerem</li>
+        <!-- VE Team -->
+        <li>easterEggs(p=0.5)->Dan</li>
+        <li>easterEggs(p=0.5)->Daniel</li>
+        <li>easterEggs->Erdelf</li>
         <li>easterEggs->Erin</li>
         <li>easterEggs->Kikohi</li>
+        <li>easterEggs->Lego</li>
+        <li>easterEggs->Orion</li>
         <li>easterEggs->Oskar</li>
         <li>easterEggs->Phil</li>
-        <li>easterEggs->Sarah</li>
         <li>easterEggs->Sarg</li>
-        <li>easterEggs->Ty</li>
+        <li>easterEggs(p=0.5)->Taran</li>
+        <li>easterEggs(p=0.5)->Taranchuk</li>
+        <!-- Buy his book! -->
+        <li>easterEggs(p=0.5)->Ty</li>
+        <li>easterEggs(p=0.5)->Tynan</li>
 
-        <li>charPrefix(p=3)->the</li>
-        <li>charPrefix->little</li>
-        <li>charPrefix->big</li>
-        <li>charPrefix(p=0.5)->super</li>
+        <li>charPrefix(p=6)->the</li>
+        <li>charPrefix->the [size]</li>
 
-        <li>maybeSufix(p=3)-></li>
+        <li>maybeSufix(p=10)-></li>
         <li>maybeSufix->boy</li>
         <li>maybeSufix->girl</li>
         <li>maybeSufix(p=0.5)->kin</li>
+
+        <li>size->little</li>
+        <li>size->tiny</li>
+        <li>size->petite</li>
+        <li>size->big</li>
+        <li>size->huge</li>
+        <li>size->super</li>
 
         <li>linkagePlace->in the</li>
         <li>linkagePlace->by the</li>
@@ -101,9 +172,10 @@
 
         <li>adjective(p=10)->[AdjectiveAny]</li>
         <li>adjective(p=10)->[Color]</li>
+        <li>adjective(p=6)->[size]</li>
         <li>adjective->gay</li>
         <li>adjective->purrific</li>
-        <li>adjective(p=0.1)->Octogiraffic</li>
+        <li>adjective->Octogiraffic</li>
         
         <li>place(p=25)->[TerrainFeature]</li>
         <li>place->Amphitheater</li>
@@ -195,23 +267,16 @@
         <li>story->Tales</li>
         <li>story->Whimsy</li>
 
-        <li>foodS(p=5)->[Vegetable]</li>
-        <li>foodS->eggs</li>
-        <li>foodS->steak</li>
-        <li>foodS->ham</li>
-        <li>foodS->wings</li>
-        <li>foodS->drumstick</li>
-        <li>foodS(p=0.1)->liver</li>
-        <li>foodS(p=0.1)->tongue</li>
-
-        <li>foodP(p=5)->[Vegetable]s</li>
-        <li>foodP->eggs</li>
-        <li>foodP->steak</li>
-        <li>foodP->ham</li>
-        <li>foodP->wings</li>
-        <li>foodP->drumsticks</li>
-        <li>foodP(p=0.1)->livers</li>
-        <li>foodP(p=0.1)->tongues</li>
+        <li>food(p=10)->[Vegetable]s</li>
+        <li>food->eggs</li>
+        <li>food->steak</li>
+        <li>food->ham</li>
+        <li>food->porkchops</li>
+        <li>food->wings</li>
+        <li>food->drumsticks</li>
+        <!-- Old fashioned Foods -->
+        <li>food(p=0.1)->livers</li>
+        <li>food(p=0.1)->tongues</li>
 
       </rulesStrings>
     </rulePack>
@@ -226,18 +291,27 @@
       <rulesStrings>
         
         <!-- Roots -->
-        <li>desc->This [writingQualityAdjective] [bookType] [follows] a [PersonJob] as [protagHe] [storyStruggles]. [writingQualitySentence]. [maybe_date]</li>
+        <li>desc->This [writingQualityAdjective] [bookType] [follows] a [char] as [protagHe] [storyStruggles]. [writingQualitySentence]. [maybe_date]</li>
 
-        <!-- Root: Story struggle variant -->
+        <!-- Content -->
+        <li>char->child</li>
+        <li>char->kid</li>
+        <li>char->youngling</li>
+        <li>char->animal</li>
+        <li>char->[PersonJob]</li>
+        <li>char->[protagHero]</li>
+		
 		
         <li>follows->follows</li>
         <li>follows->covers</li>
         <li>follows->tells the story of</li>
         <li>follows->is written from the point of view of</li>
 
-        <li>protagHe->he</li>
-        <li>protagHis->his</li>
-        <li>protagHim->him</li>
+        <!-- offset vanilla use of he/him until protag is implemented -->
+        <li>protagHe->she</li>
+        <li>protagHis->her</li>
+        <li>protagHim->her</li>
+        <li>protagHero->heroine</li>
 
 
         <li>storyStruggles->[struggles] against [opponent]</li>
