@@ -46,6 +46,7 @@
     <rulePack>
       <rulesStrings>
         <!-- Roots -->
+        <li>title->[charPrefix] [Animal] [PersonJob]</li>
         <li>title->[charPrefix] [story] of [charName]</li>
         <li>title->[charPrefix] [place] of [charName]</li>
         <li>title(p=0.5)->[charName]'s [story]</li>
@@ -54,25 +55,28 @@
         <li>title(p=0.5)->[charName]'s [adjective] [place]</li>
         <li>title->[charName] [linkagePlace] [place]</li>
         <li>title(p=0.5)->[charPrefix] [adjective] [place]</li>
-        <li>title(p=0.5)->[charPrefix] [adjective] [Animal][maybeSufix]</li>
+        <li>title(p=0.5)->[charPrefix] [adjective] [Animal][maybeSuffix]</li>
+        <li>title(quality[greater_than]4)->[easterEggs][charTitle]</li>
         <!-- Dr. Suess -->
-        <li>title(p=0.2)->the [Animal][maybeSufix] in the [storage]</li>
-        <li>title(p=0.2)->one [Animal][maybeSufix], two [Animal][maybeSufix], [Color] [Animal][maybeSufix], [Color] [Animal][maybeSufix]</li>
-        <li>title(p=0.2)->[Color] [food] and [food]</li>
+        <li>title(p=0.5)->the [Animal][maybeSuffix] in the [storage]</li>
+        <li>title(quality[less_than]2)->one [Animal][maybeSuffix], two [Animal][maybeSuffix], [Color] [Animal][maybeSuffix], [Color] [Animal][maybeSuffix]</li>
+        <li>title(quality[less_than]2)->[Color] [food] and [food]</li>
 
 
         <!-- Content -->
         <li>charName->[charPrefix] [xeno]</li>
-        <li>charName->[charPrefix] [Animal][maybeSufix]</li>
+        <li>charName->[charPrefix] [Animal][maybeSuffix]</li>
         <li>charName->[NameAnimalFemale][maybeTitle]</li>
         <li>charName->[NameAnimalMale][maybeTitle]</li>
         <li>charName->[NameAnimalUnisex][maybeTitle]</li>
-        <li>charName(p=0.3)->[easterEggs][maybeTitle]</li>
+        <li>charName(quality[greater_than]4)->[easterEggs][maybeTitle]</li>
 		
-        <li>maybeTitle(p=4)-></li>
-        <li>maybeTitle-> [charPrefix] [xeno]</li>
-        <li>maybeTitle-> [charPrefix] [Animal][maybeSufix]</li>
+        <li>maybeTitle(p=2)-></li>
+        <li>maybeTitle-> [charTitle]</li>
 
+        <li>charTitle-> [charPrefix] [xeno]</li>
+        <li>charTitle-> [charPrefix] [Animal][maybeSuffix]</li>
+		
         <li>storage(p=10)->[Apparel]</li>
         <li>storage->attic</li>
         <li>storage->basement</li>
@@ -92,7 +96,6 @@
         <li MayRequire="vanillaracesexpanded.fungoid">xeno->fungoid</li>
         <li>xeno->genie</li>
         <li>xeno->gnome</li>
-        <li>xeno->highmate</li>
         <li>xeno->hobbit</li>
         <li>xeno->hussar</li>
         <li>xeno->impid</li>
@@ -102,11 +105,13 @@
         <li>xeno->pixie</li>
         <li>xeno->pigskin</li>
         <li MayRequire="vanillaracesexpanded.phytokin">xeno->phytokin</li>
+        <li MayRequire="Solaris.RatkinRaceMod">xeno(quality[greater_than]1)->ratkin</li>
         <li>xeno->sanguophage</li>
-        <li>xeno->saurid</li>
+        <li MayRequire="vanillaracesexpanded.saurid">xeno->saurid</li>
         <li>xeno->waster</li>
         <li>xeno->yttakin</li>
 		
+        <!-- Masterwork/Legendary Only -->
         <li>easterEggs->Aelanna</li>
         <li>easterEggs->Andreas</li>
         <li>easterEggs->Banana</li>
@@ -151,12 +156,15 @@
         <li>charPrefix(p=6)->the</li>
         <li>charPrefix->the [size]</li>
 
-        <li>maybeSufix(p=10)-></li>
-        <li>maybeSufix->boy</li>
-        <li>maybeSufix->girl</li>
-        <li>maybeSufix(p=0.5)->kin</li>
+        <li>maybeSuffix(p=4)-></li>
+        <li>maybeSuffix->[suffix]</li>
 
+        <li>suffix->boy</li>
+        <li>suffix->girl</li>
+        <li>suffix(p=0.5)->kin</li>
+		
         <li>size->little</li>
+        <li>size->littlest</li>
         <li>size->tiny</li>
         <li>size->petite</li>
         <li>size->big</li>
@@ -170,12 +178,16 @@
         <li>linkagePlace->near the</li>
         <li>linkagePlace->goes to the</li>
 
+        <li>maybeAdjective(p=3)-></li>
+        <li>maybeAdjective->[adjective]</li>
+		
         <li>adjective(p=10)->[AdjectiveAny]</li>
         <li>adjective(p=10)->[Color]</li>
         <li>adjective(p=6)->[size]</li>
-        <li>adjective->gay</li>
-        <li>adjective->purrific</li>
-        <li>adjective->Octogiraffic</li>
+        <li>adjective(quality[greater_than]2)->gay</li>
+        <li>adjective(quality[greater_than]2)->purrific</li>
+        <li>adjective(quality[greater_than]2)->Octogiraffic</li>
+        <li>adjective(quality[greater_than]2)->technicolor</li>
         
         <li>place(p=25)->[TerrainFeature]</li>
         <li>place->Amphitheater</li>
@@ -271,12 +283,13 @@
         <li>food->eggs</li>
         <li>food->steak</li>
         <li>food->ham</li>
+        <li>food->spam</li>
         <li>food->porkchops</li>
         <li>food->wings</li>
         <li>food->drumsticks</li>
         <!-- Old fashioned Foods -->
-        <li>food(p=0.1)->livers</li>
-        <li>food(p=0.1)->tongues</li>
+        <li>food(p=0.1)->liver</li>
+        <li>food(p=0.1)->tongue</li>
 
       </rulesStrings>
     </rulePack>
@@ -297,8 +310,6 @@
         <li>char->child</li>
         <li>char->kid</li>
         <li>char->youngling</li>
-        <li>char->animal</li>
-        <li>char->[PersonJob]</li>
         <li>char->[protagHero]</li>
 		
 		
@@ -329,9 +340,7 @@
         <li>opponent->fear</li>
         <li>opponent->a dangerous [Enemy]</li>
         <li>opponent->a rival [PersonJob]</li>
-        <li>opponent->the meaninglessness of [ConceptPositive]</li>
         <li>opponent->[protagHis] evil [PersonFamily]</li>
-        <li>opponent->[protagHis] community's social norms</li>
 
 
         <li>seeks->seeks</li>
@@ -351,14 +360,92 @@
         <li>seeks->diligently seeks out</li>
         <li>seeks->wanders in search of</li>
         <li>seeks->goes on a mission to find</li>
+        <li>seeks->explores a secret garden in search of</li>
+        <li>seeks(p=5)->sails [seaDest][seaTravel] [seekType]</li>
+        <li>seeks(p=5)->flies [flyDest][flyTravel] [seekType]</li>
+        <li>seeks->follows a [Animal] down a hole to find</li>
 
+        <li>seekType->in search of</li>
+        <li>seekType->searching for</li>
+        <li>seekType->to find</li>
+
+        <li>flyDest->around the world</li>
+        <li>flyDest->to the end of time</li>
+        <li>flyDest->to the end of the universe</li>
+        <li>flyDest->to the moon</li>
+        <li>flyDest->to the stars</li>
+        <li>flyDest->to the sun</li>
+        <li>flyDest->to the top of the tallest mountain in the world</li>
+        <li>flyDest->to the top of the tallest tree in the world</li>
+
+        <li>flyTravel-></li>
+        <li>flyTravel-> in a [flyShip]</li>
+        <li>flyTravel-> on a magic [flyMagic]</li>
+        <li>flyTravel-> on a [flyAnimal]'s back</li>
+        <li>flyTravel-> with the help of [flyAssist]</li>
+
+        <li>flyAnimal->dragon</li>
+        <li>flyAnimal->griffin</li>
+        <li>flyAnimal->pegasus</li>
+        <li>flyAnimal->unicorn</li>
+
+        <li>flyShip->airship</li>
+        <li>flyShip->balloon</li>
+        <li>flyShip->flying car</li>
+        <li>flyShip->rocket</li>
+
+        <li>flyMagic->bedframe</li>
+        <li>flyMagic->bike</li>
+        <li>flyMagic->bicycle</li>
+        <li>flyMagic->carpet</li>
+        <li>flyMagic->cloud</li>
+        <li>flyMagic->couch</li>
+        <li>flyMagic->rug</li>
+        <li>flyMagic->scooter</li>
+        <li>flyMagic->skateboard</li>
+        <li>flyMagic->sofa</li>
+        <li>flyMagic->surfboard</li>
+        <li>flyMagic->tricycle</li>
+        <li>flyMagic->unicycle</li>
+
+        <li>flyAssist->a [flyCaptain] in a [flyShip]</li>
+        <li>flyAssist->a [Animal] on a flying [flyMagic]</li>
+        <li>flyAssist->some pixie dust</li>
+
+        <li>flyCaptain->boy</li>
+        <li>flyCaptain->[PersonJob]</li>
+        <li>flyCaptain->[Animal]</li>
+
+        <li>seaDest->the seas</li>
+        <li>seaDest->the oceans</li>
+
+        <li>seaTravel-></li>
+        <li>seaTravel-> in a [seaSimple]</li>
+        <li>seaTravel-> on a [seaShip]</li>
+        <li>seaTravel-> on a [seaAnimal]'s back</li>
+
+        <li>seaSimple->barrel</li>
+        <li>seaSimple->canoe</li>
+
+        <li>seaShip->boat</li>
+        <li>seaShip->raft</li>
+        <li>seaShip->sailboat</li>
+        <li>seaShip->ship</li>
+
+        <li>seaAnimal->dolphin</li>
+        <li>seaAnimal->manatee</li>
+        <li>seaAnimal->mermaid</li>
+        <li>seaAnimal->penguin</li>
+        <li>seaAnimal->seal</li>
+        <li>seaAnimal->selkie</li>
+        <li>seaAnimal->turtle</li>
+        <li>seaAnimal->whale</li>
 
         <li>seekObjective->a mysterious golden cube</li>
         <li>seekObjective->the best-tasting [Vegetable] in the universe</li>
         <li>seekObjective->a shiny new [Weapon]</li>
         <li>seekObjective->[protagHis] lost pet [Animal]</li>
         <li>seekObjective->a [TerrainFeature] that [protagHe] saw in a dream</li>
-        <li>seekObjective->food in a vast wasteland</li>
         <li>seekObjective->the warmth and safety of home</li>
         <li>seekObjective->love in a world full of hate</li>
         <li>seekObjective->a long-lost family recipe</li>
@@ -368,7 +455,6 @@
         <li>seekObjective->a rare collectible from [protagHis] favorite series</li>
         <li>seekObjective->the perfect spot for a picnic</li>
         <li>seekObjective->a missing piece from a prized collection</li>
-        <li>seekObjective->an apology for a past mistake</li>
         <li>seekObjective->a lost treasure map</li>
         <li>seekObjective->a meaningful memento from a deceased loved one</li>
         <li>seekObjective->a recipe for a cure to an illness</li>
@@ -376,9 +462,13 @@
         <li>seekObjective->a letter written but never sent</li>
         <li>seekObjective->an elusive answer to a philosophical question</li>
         <li>seekObjective->a quiet moment away from the chaos</li>
-        <li>seekObjective->an old friend in a new city</li>
-        <li>seekObjective->the thrill of a forgotten hobby</li>
+        <li>seekObjective->an old friend</li>
+        <li>seekObjective->a new friend</li>
+        <li>seekObjective->the thrill of a new hobby</li>
         <li>seekObjective->a single moment of pure happiness</li>
+        <li>seekObjective->pirate treasure</li>
+        <li>seekObjective->a technicolor [Apparel]</li>
+        <li>seekObjective->a quiet spot to read</li>
 
 
         <!-- Writing quality -->
@@ -419,8 +509,6 @@
         <li>decentExtra-> but is often hard to follow</li>
         <li>decentExtra-> but is riddled with continuity errors</li>
         <li>decentExtra-> but lacks any deep emotions</li>
-        <li>decentExtra-> but the characters are trite and cartoonish</li>
-        <li>decentExtra-> but the author constantly uses words inappropriately in an attempt to sound smart</li>
         <li>decentExtra-> but the world is unoriginal and dull</li>
         <li>decentExtra-> but the writing is excessively flowery</li>
         <li>decentExtra-> but many of the story beats are unnecessary and fail to move the plot forward</li>
@@ -441,6 +529,7 @@
         <li>awfulExtra-> and doesn't present any interesting ideas at all</li>
         <li>awfulExtra-> and every character is boring</li>
         <li>awfulExtra-> and there is no identifiable protagonist at any point</li>
+        <li>awfulExtra-> and the author constantly uses words inappropriate for kids</li>
 
         <!-- Date -->
 
