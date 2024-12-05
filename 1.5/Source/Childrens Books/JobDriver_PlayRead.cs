@@ -85,7 +85,7 @@ namespace Childrens_Books
             toil.WithEffect(EffecterDefOf.PlayStatic, TargetIndex.A);
             AddFinishAction(delegate
             {
-                TaleRecorder.RecordTale(ChildrensBookDefOf.BBLK_BabyRead_Tale, pawn, Baby);
+                TaleRecorder.RecordTale(ChildrensBookDefOf.BBLK_BabyRead_Tale, pawn, Baby, Book);
             });
             toil.initAction = delegate
             {
