@@ -7,6 +7,7 @@ namespace Childrens_Books
 {
     public class WorkGiver_BedTimeStory : WorkGiver_Scanner
     {
+        public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForGroup(ThingRequestGroup.Pawn);
         public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn teacher)
         {
             return teacher.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer);

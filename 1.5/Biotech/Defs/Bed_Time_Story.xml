@@ -6,6 +6,9 @@
     <label>read bed time story</label>
     <giverClass>Childrens_Books.WorkGiver_BedTimeStory</giverClass>
     <workType>Childcare</workType>
+    <workTags>
+      <li>Social</li>
+    </workTags>
     <verb>read to</verb>
     <gerund>reading to</gerund>
     <priorityInType>9998</priorityInType>
@@ -116,6 +119,8 @@
     <defName>BBLK_BedTimeStory</defName>
     <label>read</label>
     <workerClass>InteractionWorker</workerClass>
+    <initiatorXpGainSkill>Social</initiatorXpGainSkill>
+    <initiatorXpGainAmount>1</initiatorXpGainAmount>
     <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
     <symbol>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook_Open_east</symbol>
     <logRulesInitiator>
@@ -175,9 +180,9 @@
     <baseInterest>1</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[READER_nameFull] reading [THING_title] to [CHILD_nameFull]</li> <!-- "this refers to" -->
-        <li>tale_noun->[CHILD_nameFull] listening to [READER_nameFull] read [THING_title]</li>
-        <li>image->[READER_nameDef] reading [THING_title] to [CHILD_nameDef] [circumstance_group]</li> <!-- 1st -->
+        <li>tale_noun->[READER_nameDef] reading [THING_title] to [CHILD_nameDef]</li> <!-- "this refers to" -->
+        <li>tale_noun->[CHILD_nameDef] listening to [READER_nameDef] read [THING_title]</li>
+        <li>image->[READER_nameFull] reading [THING_title] to [CHILD_nameFull] [circumstance_group]</li> <!-- 1st -->
         <li>image->[CHILD_nameFull] listening to [READER_nameFull] read [THING_title] [circumstance_group]</li>
         <li>circumstance_phrase->as [CHILD_pronoun] gets ready to sleep</li> <!-- 2nd -->
         <li>desc_sentence->[CHILD_nameDef] is [reaction].</li> <!-- 3rd -->

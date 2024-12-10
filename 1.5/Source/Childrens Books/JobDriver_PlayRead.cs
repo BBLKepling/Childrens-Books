@@ -85,6 +85,7 @@ namespace Childrens_Books
             toil.WithEffect(EffecterDefOf.PlayStatic, TargetIndex.A);
             AddFinishAction(delegate
             {
+                if (pawn.inventory.Contains(Book)) pawn.inventory.DropCount(Book.def, 1);
                 TaleRecorder.RecordTale(ChildrensBookDefOf.BBLK_BabyRead_Tale, pawn, Baby, Book);
             });
             toil.initAction = delegate
@@ -93,7 +94,7 @@ namespace Childrens_Books
             };
             toil.tickAction = delegate
             {
-                if (Find.TickManager.TicksGame % 600 == 0)
+                if (pawn.RaceProps.Humanlike && Find.TickManager.TicksGame % 600 == 0)
                 {
                     pawn.interactions.TryInteractWith(base.Baby, ChildrensBookDefOf.BBLK_BabyRead);
                 }

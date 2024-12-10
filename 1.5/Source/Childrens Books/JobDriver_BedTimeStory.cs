@@ -79,7 +79,7 @@ namespace Childrens_Books
             yield return failIfNoBook;
             yield return Toils_Goto.GotoCell(Child.PositionHeld, PathEndMode.ClosestTouch).FailOnDestroyedOrNull(TargetIndex.B).FailOnSomeonePhysicallyInteracting(TargetIndex.B);
             yield return GoToChair();
-            yield return ReadToil(job.def.joyDuration);
+            yield return ReadToil();
         }
         protected Toil FailIfNoBook()
         {
@@ -87,11 +87,13 @@ namespace Childrens_Books
             toil.FailOn(() => !pawn.IsCarryingThing(Book));
             return toil;
         }
-        protected Toil ReadToil(int duration)
+        protected Toil ReadToil()
         {
-            Toil toil = Toils_General.Wait(duration);
-            toil.defaultCompleteMode = ToilCompleteMode.Never;
+            Toil toil = ToilMaker.MakeToil("Read");
+            toil.defaultCompleteMode = ToilCompleteMode.Delay;
+            toil.defaultDuration = job.def.joyDuration;
             toil.handlingFacing = true;
+            toil.socialMode = RandomSocialMode.Off;
             toil.initAction = delegate
             {
                 Book.IsOpen = true;
@@ -104,7 +106,7 @@ namespace Childrens_Books
             };
             toil.tickAction = delegate
             {
-                if (Find.TickManager.TicksGame % 600 == 0)
+                if (pawn.RaceProps.Humanlike && Find.TickManager.TicksGame % 600 == 0)
                 {
                     pawn.interactions.TryInteractWith(Child, ChildrensBookDefOf.BBLK_BedTimeStory);
                 }
