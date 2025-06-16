@@ -4,6 +4,7 @@
   <author>bblkepling</author>
   <supportedVersions>
     <li>1.5</li>
+    <li>1.6</li>
   </supportedVersions>
   <packageId>bblkepling.childrensbooks</packageId>
   <description>Adds coloring books with vanilla, and childrens books with Biotech. While reading them LearningRateFactor is increased with Biotech installed. Childrens books can only be read at length by children, teens and adults will quickly become bored trying to read them. Coloring books can be read by anyone and have higher recreation and learning rates vs novels or childrens books, but reading them will lower their hit points until they are "fully colored in" and become trash.</description>

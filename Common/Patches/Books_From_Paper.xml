@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Books From Paper</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+      
+        <!-- Novel -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="BBLK_WriteColoringBook" or defName="BBLK_WriteChildrensBook"]/ingredients</xpath>
+          <value>
+            <ingredients>
+              <li>
+                <filter>
+                  <thingDefs>
+                    <li>klvlt_Paper</li>
+                  </thingDefs>
+                </filter>
+                <count>4</count>
+              </li>
+              <li>
+                <filter>
+                  <thingDefs>
+                    <li>Dye</li>
+                  </thingDefs>
+                </filter>
+                <count>2</count>
+              </li>
+              <li>
+                <filter>
+                  <stuffCategoriesToAllow>
+                    <li>Leathery</li>
+                  </stuffCategoriesToAllow>
+                </filter>
+                <count>20</count>
+              </li>
+            </ingredients>
+          </value>
+        </li>
+        
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="BBLK_WriteColoringBook" or defName="BBLK_WriteChildrensBook"]/fixedIngredientFilter</xpath>
+          <value>
+            <fixedIngredientFilter>
+              <stuffCategoriesToAllow>
+                <li>Leathery</li>
+              </stuffCategoriesToAllow>
+            </fixedIngredientFilter>
+          </value>
+        </li>
+        
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

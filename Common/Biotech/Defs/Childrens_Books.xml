@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BookBase">
+    <defName>BBLK_ChildrensBook</defName>
+    <label>childrens book</label>
+    <description>A book intended for children, adults and teens will quickly become bored trying to read it. Learning rate will be increased while reading this book.</description>
+    <graphicData>
+      <texPath>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook</uiIconPath>
+    <statBases>
+      <MarketValue>160</MarketValue>
+      <WorkToMake>240000</WorkToMake>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Book">
+        <nameMaker>BBLK_ChildrensBook_Namer</nameMaker>
+        <descriptionMaker>BBLK_ChildrensBook_Description</descriptionMaker>
+        <ageYearsRange>100~200</ageYearsRange>
+        <openGraphic>
+          <texPath>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook_Open</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.7</drawSize>
+        </openGraphic>
+        <verticalGraphic>
+          <texPath>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook_Vertical</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <addTopAltitudeBias>true</addTopAltitudeBias>
+        </verticalGraphic>
+        <doers>
+          <li Class="Childrens_Books.BookOutcomeProperties_ChildrensBook" />
+        </doers>
+      </li>
+    </comps>
+  </ThingDef>
+
+        <!-- Do not use [Mechanoid] or [Character] as they will add Sexbot, we don't want that -->
+  <RulePackDef>
+    <defName>BBLK_ChildrensBook_Namer</defName>
+    <include>
+      <li>NamerAnimalUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <!-- Roots -->
+        <li>title->[charPrefix] [Animal] [PersonJob]</li>
+        <li>title->[charPrefix] [story] of [charName]</li>
+        <li>title->[charPrefix] [place] of [charName]</li>
+        <li>title(p=0.5)->[charName]'s [story]</li>
+        <li>title(p=0.5)->[charName]'s [place]</li>
+        <li>title(p=0.5)->[charName]'s [adjective] [story]</li>
+        <li>title(p=0.5)->[charName]'s [adjective] [place]</li>
+        <li>title->[charName] [linkagePlace] [place]</li>
+        <li>title(p=0.5)->[charPrefix] [adjective] [place]</li>
+        <li>title(p=0.5)->[charPrefix] [adjective] [Animal][maybeSuffix]</li>
+        <li>title(quality[greater_than]4)->[easterEggs][charTitle]</li>
+        <!-- Dr. Suess -->
+        <li>title(p=0.5)->the [Animal][maybeSuffix] in the [storage]</li>
+        <li>title(quality[less_than]2)->one [Animal][maybeSuffix], two [Animal][maybeSuffix], [Color] [Animal][maybeSuffix], [Color] [Animal][maybeSuffix]</li>
+        <li>title(quality[less_than]2)->[Color] [food] and [food]</li>
+
+
+        <!-- Content -->
+        <li>charName->[charPrefix] [xeno]</li>
+        <li>charName->[charPrefix] [Animal][maybeSuffix]</li>
+        <li>charName->[NameAnimalFemale][maybeTitle]</li>
+        <li>charName->[NameAnimalMale][maybeTitle]</li>
+        <li>charName->[NameAnimalUnisex][maybeTitle]</li>
+        <li>charName(quality[greater_than]4)->[easterEggs][maybeTitle]</li>
+		
+        <li>maybeTitle(p=2)-></li>
+        <li>maybeTitle-> [charTitle]</li>
+
+        <li>charTitle-> [charPrefix] [xeno]</li>
+        <li>charTitle-> [charPrefix] [Animal][maybeSuffix]</li>
+		
+        <li>storage(p=10)->[Apparel]</li>
+        <li>storage->attic</li>
+        <li>storage->basement</li>
+        <li>storage->box</li>
+        <li>storage->closet</li>
+        <li>storage->kitchen</li>
+        <li>storage->garage</li>
+        <li>storage->pantry</li>
+
+        <li>xeno->android</li>
+        <li MayRequire="vanillaracesexpanded.archon">xeno->archon</li>
+        <li>xeno->catgirl</li>
+        <li>xeno->dirtmole</li>
+        <li>xeno->dwarf</li>
+        <li>xeno->elf</li>
+        <li>xeno->fairy</li>
+        <li MayRequire="vanillaracesexpanded.fungoid">xeno->fungoid</li>
+        <li>xeno->genie</li>
+        <li>xeno->gnome</li>
+        <li>xeno->hobbit</li>
+        <li>xeno->hussar</li>
+        <li>xeno->impid</li>
+        <li MayRequire="vanillaracesexpanded.insector">xeno->insector</li>
+        <li MayRequire="vanillaracesexpanded.lycanthrope">xeno->lycanthope</li>
+        <li>xeno->neanderthal</li>
+        <li>xeno->pixie</li>
+        <li>xeno->pigskin</li>
+        <li MayRequire="vanillaracesexpanded.phytokin">xeno->phytokin</li>
+        <li MayRequire="Solaris.RatkinRaceMod">xeno(quality[greater_than]1)->ratkin</li>
+        <li>xeno->sanguophage</li>
+        <li MayRequire="vanillaracesexpanded.saurid">xeno->saurid</li>
+        <li>xeno->waster</li>
+        <li>xeno->yttakin</li>
+		
+        <!-- Masterwork/Legendary Only -->
+        <li>easterEggs->Aelanna</li>
+        <li>easterEggs->Andreas</li>
+        <li>easterEggs->Banana</li>
+        <li>easterEggs->Bottle</li>
+        <li>easterEggs->Dub</li>
+        <li>easterEggs->Elmo</li>
+        <li>easterEggs->Evelyn</li>
+        <li>easterEggs(p=0.5)->Karim</li>
+        <li>easterEggs(p=0.5)->Rocketman</li>
+        <li>easterEggs(p=0.5)->Kay</li>
+        <li>easterEggs(p=0.5)->Kayedon</li>
+        <li>easterEggs->Lucy</li>
+        <li>easterEggs->Mlie</li>
+        <li>easterEggs->Octogiraffe</li>
+        <li>easterEggs(p=0.5)->Rick</li>
+        <li>easterEggs(p=0.5)->Ranger Rick</li>
+        <li>easterEggs->Sarah</li>
+        <li>easterEggs->Sierra</li>
+        <li>easterEggs->Steve</li>
+        <li>easterEggs(p=0.5)->Syr</li>
+        <li>easterEggs(p=0.5)->Syrchalis</li>
+        <li>easterEggs(p=0.5)->Theki</li>
+        <li>easterEggs(p=0.5)->Thekiborg</li>
+        <li>easterEggs->Zaljerem</li>
+        <!-- VE Team -->
+        <li>easterEggs(p=0.5)->Dan</li>
+        <li>easterEggs(p=0.5)->Daniel</li>
+        <li>easterEggs->Erdelf</li>
+        <li>easterEggs->Erin</li>
+        <li>easterEggs->Kikohi</li>
+        <li>easterEggs->Lego</li>
+        <li>easterEggs->Orion</li>
+        <li>easterEggs->Oskar</li>
+        <li>easterEggs->Phil</li>
+        <li>easterEggs->Sarg</li>
+        <li>easterEggs(p=0.5)->Taran</li>
+        <li>easterEggs(p=0.5)->Taranchuk</li>
+        <!-- Buy his book! -->
+        <li>easterEggs(p=0.5)->Ty</li>
+        <li>easterEggs(p=0.5)->Tynan</li>
+
+        <li>charPrefix(p=6)->the</li>
+        <li>charPrefix->the [size]</li>
+
+        <li>maybeSuffix(p=4)-></li>
+        <li>maybeSuffix->[suffix]</li>
+
+        <li>suffix->boy</li>
+        <li>suffix->girl</li>
+        <li>suffix(p=0.5)->kin</li>
+		
+        <li>size->little</li>
+        <li>size->littlest</li>
+        <li>size->tiny</li>
+        <li>size->petite</li>
+        <li>size->big</li>
+        <li>size->huge</li>
+        <li>size->super</li>
+
+        <li>linkagePlace->in the</li>
+        <li>linkagePlace->by the</li>
+        <li>linkagePlace->down by the</li>
+        <li>linkagePlace->on the</li>
+        <li>linkagePlace->near the</li>
+        <li>linkagePlace->goes to the</li>
+
+        <li>maybeAdjective(p=3)-></li>
+        <li>maybeAdjective->[adjective]</li>
+		
+        <li>adjective(p=10)->[AdjectiveAny]</li>
+        <li>adjective(p=10)->[Color]</li>
+        <li>adjective(p=6)->[size]</li>
+        <li>adjective(quality[greater_than]2)->gay</li>
+        <li>adjective(quality[greater_than]2)->purrific</li>
+        <li>adjective(quality[greater_than]2)->Octogiraffic</li>
+        <li>adjective(quality[greater_than]2)->technicolor</li>
+        
+        <li>place(p=25)->[TerrainFeature]</li>
+        <li>place->Amphitheater</li>
+        <li>place->Aquarium</li>
+        <li>place->Aqueduct</li>
+        <li>place->Arena</li>
+        <li>place->Asylum</li>
+        <li>place->Barracks</li>
+        <li>place->Base</li>
+        <li>place->Bunker</li>
+        <li>place->Cabin</li>
+        <li>place->Camp</li>
+        <li>place->Castle</li>
+        <li>place->Cathedral</li>
+        <li>place->Cavern</li>
+        <li>place->Citadel</li>
+        <li>place->City</li>
+        <li>place->Coliseum</li>
+        <li>place->Colony</li>
+        <li>place->Depths</li>
+        <li>place->Desert</li>
+        <li>place->Elevator</li>
+        <li>place->Factory</li>
+        <li>place->Festival</li>
+        <li>place->Fortress</li>
+        <li>place->Glade</li>
+        <li>place->Graveyard</li>
+        <li>place->Greenhouse</li>
+        <li>place->Grove</li>
+        <li>place->Harbor</li>
+        <li>place->Heart</li>
+        <li>place->Hive</li>
+        <li>place->Hospital</li>
+        <li>place->Island</li>
+        <li>place->Jungle</li>
+        <li>place->Laboratory</li>
+        <li>place->Labyrinth</li>
+        <li>place->Launchpad</li>
+        <li>place->Library</li>
+        <li>place->Lighthouse</li>
+        <li>place->Manor</li>
+        <li>place->Mansion</li>
+        <li>place->Marketplace</li>
+        <li>place->Mine</li>
+        <li>place->Monastery</li>
+        <li>place->Mountain</li>
+        <li>place->Nexus</li>
+        <li>place->Oasis</li>
+        <li>place->Observatory</li>
+        <li>place->Orchard</li>
+        <li>place->Outpost</li>
+        <li>place->Palace</li>
+        <li>place->Plateau</li>
+        <li>place->Playground</li>
+        <li>place->Refinery</li>
+        <li>place->Resort</li>
+        <li>place->Rift</li>
+        <li>place->Ruins</li>
+        <li>place->Sanctuary</li>
+        <li>place->School</li>
+        <li>place->Settlement</li>
+        <li>place->Ship</li>
+        <li>place->Space Station</li>
+        <li>place->Spaceport</li>
+        <li>place->Swamp</li>
+        <li>place->Tavern</li>
+        <li>place->Temple</li>
+        <li>place->Town</li>
+        <li>place->Tundra</li>
+        <li>place->University</li>
+        <li>place->Village</li>
+        <li>place->Volcano</li>
+        <li>place->Wilderness</li>
+        <li>place->Zoo</li>
+
+        <li>story->Adventure</li>
+        <li>story->Adventures</li>
+        <li>story->Fairy Tale</li>
+        <li>story->Fantasia</li>
+        <li>story->Fantasy</li>
+        <li>story->Imagination</li>
+        <li>story->Imaginings</li>
+        <li>story->Journey</li>
+        <li>story->Legend</li>
+        <li>story->Legends</li>
+        <li>story->Musical</li>
+        <li>story->Story</li>
+        <li>story->Tale</li>
+        <li>story->Tales</li>
+        <li>story->Whimsy</li>
+
+        <li>food(p=10)->[Vegetable]s</li>
+        <li>food->eggs</li>
+        <li>food->steak</li>
+        <li>food->ham</li>
+        <li>food->spam</li>
+        <li>food->porkchops</li>
+        <li>food->wings</li>
+        <li>food->drumsticks</li>
+        <!-- Old fashioned Foods -->
+        <li>food(p=0.1)->liver</li>
+        <li>food(p=0.1)->tongue</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>BBLK_ChildrensBook_Description</defName>
+    <include>
+      <li>ArtDescriptionUtility_Global</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        
+        <!-- Roots -->
+        <li>desc->This [writingQualityAdjective] [bookType] [follows] a [char] as [protagHe] [storyStruggles]. [writingQualitySentence]. [maybe_date]</li>
+
+        <!-- Content -->
+        <li>char->child</li>
+        <li>char->kid</li>
+        <li>char->youngling</li>
+        <li>char->[protagHero]</li>
+		
+		
+        <li>follows->follows</li>
+        <li>follows->covers</li>
+        <li>follows->tells the story of</li>
+        <li>follows->is written from the point of view of</li>
+
+        <!-- offset vanilla use of he/him until protag is implemented -->
+        <li>protagHe->she</li>
+        <li>protagHis->her</li>
+        <li>protagHim->her</li>
+        <li>protagHero->heroine</li>
+
+
+        <li>storyStruggles->[struggles] against [opponent]</li>
+        <li>storyStruggles->[seeks] [seekObjective]</li>
+
+
+        <li>struggles->struggles</li>
+        <li>struggles->fights</li>
+        <li>struggles->strives</li>
+
+
+        <li>opponent->a [AnimalBadass]</li>
+        <li>opponent->injustice</li>
+        <li>opponent->a bully</li>
+        <li>opponent->fear</li>
+        <li>opponent->a dangerous [Enemy]</li>
+        <li>opponent->a rival [PersonJob]</li>
+        <li>opponent->[protagHis] evil [PersonFamily]</li>
+
+
+        <li>seeks->seeks</li>
+        <li>seeks->searches the universe for</li>
+        <li>seeks->tries to find</li>
+        <li>seeks->looks inside [protagHim]self and across the world to find</li>
+        <li>seeks->desperately searches for</li>
+        <li>seeks->struggles to find</li>
+        <li>seeks->scours the land for</li>
+        <li>seeks->hunts down</li>
+        <li>seeks->deliberately pursues</li>
+        <li>seeks->expends every effort to find</li>
+        <li>seeks->doggedly pursues</li>
+        <li>seeks->leaves no stone unturned in search of</li>
+        <li>seeks->embarks on a quest for</li>
+        <li>seeks->strives to locate</li>
+        <li>seeks->diligently seeks out</li>
+        <li>seeks->wanders in search of</li>
+        <li>seeks->goes on a mission to find</li>
+        <li>seeks->explores a secret garden in search of</li>
+        <li>seeks(p=5)->sails [seaDest][seaTravel] [seekType]</li>
+        <li>seeks(p=5)->flies [flyDest][flyTravel] [seekType]</li>
+        <li>seeks->follows a [Animal] down a hole to find</li>
+
+        <li>seekType->in search of</li>
+        <li>seekType->searching for</li>
+        <li>seekType->to find</li>
+
+        <li>flyDest->around the world</li>
+        <li>flyDest->to the end of time</li>
+        <li>flyDest->to the end of the universe</li>
+        <li>flyDest->to the moon</li>
+        <li>flyDest->to the stars</li>
+        <li>flyDest->to the sun</li>
+        <li>flyDest->to the top of the tallest mountain in the world</li>
+        <li>flyDest->to the top of the tallest tree in the world</li>
+
+        <li>flyTravel-></li>
+        <li>flyTravel-> in a [flyShip]</li>
+        <li>flyTravel-> on a magic [flyMagic]</li>
+        <li>flyTravel-> on a [flyAnimal]'s back</li>
+        <li>flyTravel-> with the help of [flyAssist]</li>
+
+        <li>flyAnimal->dragon</li>
+        <li>flyAnimal->griffin</li>
+        <li>flyAnimal->pegasus</li>
+        <li>flyAnimal->unicorn</li>
+
+        <li>flyShip->airship</li>
+        <li>flyShip->balloon</li>
+        <li>flyShip->flying car</li>
+        <li>flyShip->rocket</li>
+
+        <li>flyMagic->bedframe</li>
+        <li>flyMagic->bike</li>
+        <li>flyMagic->bicycle</li>
+        <li>flyMagic->carpet</li>
+        <li>flyMagic->cloud</li>
+        <li>flyMagic->couch</li>
+        <li>flyMagic->rug</li>
+        <li>flyMagic->scooter</li>
+        <li>flyMagic->skateboard</li>
+        <li>flyMagic->sofa</li>
+        <li>flyMagic->surfboard</li>
+        <li>flyMagic->tricycle</li>
+        <li>flyMagic->unicycle</li>
+
+        <li>flyAssist->a [flyCaptain] in a [flyShip]</li>
+        <li>flyAssist->a [Animal] on a flying [flyMagic]</li>
+        <li>flyAssist->some pixie dust</li>
+
+        <li>flyCaptain->boy</li>
+        <li>flyCaptain->[PersonJob]</li>
+        <li>flyCaptain->[Animal]</li>
+
+        <li>seaDest->the seas</li>
+        <li>seaDest->the oceans</li>
+
+        <li>seaTravel-></li>
+        <li>seaTravel-> in a [seaSimple]</li>
+        <li>seaTravel-> on a [seaShip]</li>
+        <li>seaTravel-> on a [seaAnimal]'s back</li>
+
+        <li>seaSimple->barrel</li>
+        <li>seaSimple->canoe</li>
+
+        <li>seaShip->boat</li>
+        <li>seaShip->raft</li>
+        <li>seaShip->sailboat</li>
+        <li>seaShip->ship</li>
+
+        <li>seaAnimal->dolphin</li>
+        <li>seaAnimal->manatee</li>
+        <li>seaAnimal->mermaid</li>
+        <li>seaAnimal->penguin</li>
+        <li>seaAnimal->seal</li>
+        <li>seaAnimal->selkie</li>
+        <li>seaAnimal->turtle</li>
+        <li>seaAnimal->whale</li>
+
+        <li>seekObjective->a mysterious golden cube</li>
+        <li>seekObjective->the best-tasting [Vegetable] in the universe</li>
+        <li>seekObjective->a shiny new [Weapon]</li>
+        <li>seekObjective->[protagHis] lost pet [Animal]</li>
+        <li>seekObjective->a [TerrainFeature] that [protagHe] saw in a dream</li>
+        <li>seekObjective->the warmth and safety of home</li>
+        <li>seekObjective->love in a world full of hate</li>
+        <li>seekObjective->a long-lost family recipe</li>
+        <li>seekObjective->a toy left behind</li>
+        <li>seekObjective->a stolen family heirloom</li>
+        <li>seekObjective->a mentor's lost journal</li>
+        <li>seekObjective->a rare collectible from [protagHis] favorite series</li>
+        <li>seekObjective->the perfect spot for a picnic</li>
+        <li>seekObjective->a missing piece from a prized collection</li>
+        <li>seekObjective->a lost treasure map</li>
+        <li>seekObjective->a meaningful memento from a deceased loved one</li>
+        <li>seekObjective->a recipe for a cure to an illness</li>
+        <li>seekObjective->a rare plant for a personal garden</li>
+        <li>seekObjective->a letter written but never sent</li>
+        <li>seekObjective->an elusive answer to a philosophical question</li>
+        <li>seekObjective->a quiet moment away from the chaos</li>
+        <li>seekObjective->an old friend</li>
+        <li>seekObjective->a new friend</li>
+        <li>seekObjective->the thrill of a new hobby</li>
+        <li>seekObjective->a single moment of pure happiness</li>
+        <li>seekObjective->pirate treasure</li>
+        <li>seekObjective->a technicolor [Apparel]</li>
+        <li>seekObjective->a quiet spot to read</li>
+
+
+        <!-- Writing quality -->
+
+        <li>writingQualityAdjective(quality==6)->remarkably well-written</li>
+        <li>writingQualityAdjective(quality==5)->smart and insightful</li>
+        <li>writingQualityAdjective(quality==4)->thoughtful and eloquent</li>
+        <li>writingQualityAdjective(quality==3)->well-written</li>
+        <li>writingQualityAdjective(quality==2)->mediocre</li>
+        <li>writingQualityAdjective(quality==1)->poorly-written</li>
+        <li>writingQualityAdjective(quality==0)->nearly-incoherent</li>
+
+        <li>writingQualitySentence(quality[greater_than]4)->It is [excellentDesc] [excellentExtra]</li>
+        <li>writingQualitySentence(quality[less_than]5,quality[greater_than]1)->It is [decentDesc] [decentExtra]</li>
+        <li>writingQualitySentence(quality[less_than]2)->It is [awfulDesc] [awfulExtra]</li>
+
+        <li>excellentDesc->a heart-pounding tale of excitement</li>
+        <li>excellentDesc->a thoughtful exploration of the human spirit</li>
+        <li>excellentDesc->deeply insightful about the complexity of the world</li>
+        <li>excellentDesc->tightly-written and rich with emotion</li>
+        <li>excellentDesc->creative and original</li>
+        <li>excellentDesc->wildly original and remarkably well-crafted</li>
+        <li>excellentDesc->filled with relatable humor</li>
+        <li>excellentExtra->. Each story beat flows naturally into the next</li>
+        <li>excellentExtra->. It is a page-turner and very hard to put down</li>
+        <li>excellentExtra->. It blows the reader's mind at least three times</li>
+        <li>excellentExtra->. The plot twists are unpredictable but also feel inevitable</li>
+        <li>excellentExtra->. The characters feel like real people</li>
+
+        <li>decentDesc->a decent story</li>
+        <li>decentDesc->interesting and engaging</li>
+        <li>decentDesc->focused on one interesting idea</li>
+        <li>decentDesc->somewhat humorous from time to time</li>
+        <li>decentDesc->gripping during some parts</li>
+        <li>decentDesc->original and quirky</li>
+        <li>decentDesc->appealing to a certain type of reader</li>
+        <li>decentExtra-> but has some glaring plot holes</li>
+        <li>decentExtra-> but is often hard to follow</li>
+        <li>decentExtra-> but is riddled with continuity errors</li>
+        <li>decentExtra-> but lacks any deep emotions</li>
+        <li>decentExtra-> but the world is unoriginal and dull</li>
+        <li>decentExtra-> but the writing is excessively flowery</li>
+        <li>decentExtra-> but many of the story beats are unnecessary and fail to move the plot forward</li>
+
+        <li>awfulDesc->very poorly written</li>
+        <li>awfulDesc->terribly written</li>
+        <li>awfulDesc->hard to read</li>
+        <li>awfulDesc->hard to follow</li>
+        <li>awfulDesc->lacking in artistic vision</li>
+        <li>awfulDesc->filled with plot holes and generic characters</li>
+        <li>awfulDesc->dominated by an author self-insert character</li>
+        <li>awfulDesc->bizarre yet unoriginal</li>
+        <li>awfulDesc->far, far too long</li>
+        <li>awfulExtra-> and the writing is borderline incoherent</li>
+        <li>awfulExtra-> and is extremely hard to follow</li>
+        <li>awfulExtra-> and fails to assemble a coherent plot</li>
+        <li>awfulExtra-> and lacks any sense of theme or meaning</li>
+        <li>awfulExtra-> and doesn't present any interesting ideas at all</li>
+        <li>awfulExtra-> and every character is boring</li>
+        <li>awfulExtra-> and there is no identifiable protagonist at any point</li>
+        <li>awfulExtra-> and the author constantly uses words inappropriate for kids</li>
+
+        <!-- Date -->
+
+        <li>maybe_date-></li>
+        <li>maybe_date->The book was published [date_form].</li>
+        <li>maybe_date->The text was first printed [date_form].</li>
+        <li>maybe_date->It's unclear exactly when the book was written.</li>
+
+        <li>date_form->recently</li>
+        <li>date_form->many centuries ago</li>
+        <li>date_form->on the [date]</li>
+        <li>date_form->in [date_season]</li>
+
+        <!-- Misc rules -->
+
+        <li>bookType(p=4)->children's book</li>
+        <li>bookType->children's song book</li>
+        <li>bookType->children's story</li>
+        <li>bookType->children's poem</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RecipeDef MayRequire="VanillaExpanded.VBooksE">
+    <defName>BBLK_WriteChildrensBook</defName>
+    <label>write childrens book</label>
+    <description>Write childrens book.</description>
+    <jobString>write childrens book.</jobString>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <workSkill>Social</workSkill>
+    <unfinishedThingDef>VBE_UnfinishedBook</unfinishedThingDef>
+    <effectWorking>Sculpt</effectWorking>
+    <soundWorking>Recipe_Write</soundWorking>
+    <recipeUsers>
+      <li>VBE_WritersTable</li>
+      <li>VBE_TypewritersTable</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BBLK_ChildrensBook>1</BBLK_ChildrensBook>
+    </products>
+  </RecipeDef>
+
+</Defs>

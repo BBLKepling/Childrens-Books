@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkGiverDef>
+    <defName>BBLK_Childcarer_BedTimeStory</defName>
+    <label>read bed time story</label>
+    <giverClass>Childrens_Books.WorkGiver_BedTimeStory</giverClass>
+    <workType>Childcare</workType>
+    <workTags>
+      <li>Social</li>
+    </workTags>
+    <verb>read to</verb>
+    <gerund>reading to</gerund>
+    <priorityInType>9998</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+      <li>Sight</li>
+      <li>Talking</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <JobDef>
+    <defName>BBLK_Job_BedTimeStory</defName>
+    <reportString>reading TargetC to TargetB.</reportString>
+    <driverClass>Childrens_Books.JobDriver_BedTimeStory</driverClass>
+    <casualInterruptible>false</casualInterruptible>
+    <joyDuration>3600</joyDuration> <!-- 60 sec -->
+    <joyKind>Reading</joyKind>
+  </JobDef>
+
+  <JobDef>
+    <defName>BBLK_Job_BedTimeListen</defName>
+    <reportString>listening to TargetA.</reportString>
+    <driverClass>Childrens_Books.JobDriver_BedTimeListen</driverClass>
+    <casualInterruptible>false</casualInterruptible>
+    <learningDuration>3600</learningDuration>
+  </JobDef>
+
+  <ThoughtDef>
+    <defName>BBLK_BedTimeStory_Thought</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook_Open_east</icon>
+    <durationDays>0.75</durationDays>
+    <nextThought>BBLK_BedTimeStoryNone_Thought</nextThought>
+    <replaceThoughts>
+      <li>BBLK_BedTimeStoryNone_Thought</li>
+      <li>BBLK_BedTimeStoryNeed_Thought</li>
+    </replaceThoughts>
+    <stages>
+      <li>
+        <label>awful bed time story</label>
+        <description>I was read an awful bed time story, kind of wish they didn't bother.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>poor bed time story</label>
+        <description>I was read a poor bed time story, it was okay I guess.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+      <li>
+        <label>bed time story</label>
+        <description>I was read a bed time story, I'm glad someone did that for me.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>good bed time story</label>
+        <description>I was read a good bed time story, it was great.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>exellent bed time story</label>
+        <description>I was read an exellent bed time story, it was awesome.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>epic bed time story</label>
+        <description>I was read an epic bed time story, it was so cool.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+      <li>
+        <label>legendary bed time story</label>
+        <description>I was read a legendary bed time story, it was out of this world.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BBLK_BedTimeStoryNone_Thought</defName>
+    <showBubble>false</showBubble>
+    <icon>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook_Open_east</icon>
+    <durationDays>5</durationDays>
+    <nextThought>BBLK_BedTimeStoryNeed_Thought</nextThought>
+    <stages>
+      <li>
+        <label>grace</label>
+        <description>Grace period.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+        <visible>false</visible>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BBLK_BedTimeStoryNeed_Thought</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook_Open_east</icon>
+    <durationDays>30</durationDays>
+    <stages>
+      <li>
+        <label>no bed time story</label>
+        <description>I haven't been read a bed time story lately, it would be great if someone read me one.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <InteractionDef>
+    <defName>BBLK_BedTimeStory</defName>
+    <label>read</label>
+    <workerClass>InteractionWorker</workerClass>
+    <initiatorXpGainSkill>Social</initiatorXpGainSkill>
+    <initiatorXpGainAmount>1</initiatorXpGainAmount>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Item/Book/BBLK_ChildrensBook/BBLK_ChildrensBook_Open_east</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [action] made [RECIPIENT_nameDef] [reaction].</li>
+
+        <li>action(p=4)->[subsubaction] aloud</li>
+        <li>action(p=5)->[subaction]</li>
+        <li>action(p=5)->[subaction] from the book</li>
+        <li>action(p=5)->[subaction] in a [tone] voice</li>
+        <li>action->pointing to a picture in the book</li>
+        <li>action(p=0.5)->turning a page in the book</li>
+
+        <li>subaction->acting out a part</li>
+        <li>subaction(p=4)->[subsubaction]</li>
+		
+        <li>subsubaction(p=2)->reading</li>
+        <li>subsubaction->singing a song</li>
+        <li>subsubaction->reciting a poem</li>
+
+        <li>tone->airy</li>
+        <li>tone->booming</li>
+        <li>tone->breathy</li>
+        <li>tone->bubbly</li>
+        <li>tone->cheerful</li>
+        <li>tone->childish</li>
+        <li>tone->coarse</li>
+        <li>tone->croaky</li>
+        <li>tone->dry</li>
+        <li>tone->friendly</li>
+        <li>tone->funny</li>
+        <li>tone->gentle</li>
+        <li>tone->joyful</li>
+        <li>tone->playful</li>
+        <li>tone->silly</li>
+        <li>tone->soft</li>
+        <li>tone->strong</li>
+        <li>tone->velvety</li>
+
+        <li>reaction->giggle</li>
+        <li>reaction->smile</li>
+        <li>reaction->squirm with joy</li>
+        <li>reaction->laugh</li>
+        <li>reaction->stare in fascination</li>
+        <li>reaction->yawn</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <TaleDef>
+    <defName>BBLK_BedTimeStory_Tale</defName>
+    <label>bed time story told</label>
+    <taleClass>Childrens_Books.Tale_DoublePawnAndThing</taleClass>
+    <type>Volatile</type>
+    <firstPawnSymbol>READER</firstPawnSymbol>
+    <secondPawnSymbol>CHILD</secondPawnSymbol>
+    <baseInterest>1</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[READER_nameDef] reading [THING_title] to [CHILD_nameDef]</li> <!-- "this refers to" -->
+        <li>tale_noun->[CHILD_nameDef] listening to [READER_nameDef] read [THING_title]</li>
+        <li>image->[READER_nameFull] reading [THING_title] to [CHILD_nameFull] [circumstance_group]</li> <!-- 1st -->
+        <li>image->[CHILD_nameFull] listening to [READER_nameFull] read [THING_title] [circumstance_group]</li>
+        <li>circumstance_phrase->as [CHILD_pronoun] gets ready to sleep</li> <!-- 2nd -->
+        <li>desc_sentence->[CHILD_nameDef] is [reaction].</li> <!-- 3rd -->
+        <li>desc_sentence->[READER_nameDef] is [actionA].</li>
+        <li>desc_sentence->[CHILD_nameDef] is [reaction] while [READER_nameDef] [actionB].</li>
+		
+        <li>actionA->pointing to a picture in the book</li>
+        <li>actionA->turning a page in the book</li>
+        <li>actionA->singing a song from the book</li>
+        <li>actionA->reciting a poem from the book</li>
+
+        <li>actionB->points to a picture in the book</li>
+        <li>actionB->turns a page in the book</li>
+        <li>actionB->sings a song from the book</li>
+        <li>actionB->recites a poem from the book</li>
+
+        <li>reaction->giggling</li>
+        <li>reaction->smiling</li>
+        <li>reaction->squirming with joy</li>
+        <li>reaction->laughing</li>
+        <li>reaction->staring in fascination</li>
+        <li>reaction->dozing off</li>
+        <li>reaction->yawning</li>
+        <li>reaction->sleeping</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+</Defs>
