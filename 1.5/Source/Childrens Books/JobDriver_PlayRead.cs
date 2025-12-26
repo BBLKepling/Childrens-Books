@@ -94,10 +94,11 @@ namespace Childrens_Books
             };
             toil.tickAction = delegate
             {
-                if (pawn.RaceProps.Humanlike && Find.TickManager.TicksGame % 600 == 0)
+                if (pawn.RaceProps.Humanlike && ticksLeftThisToil % 600 == 0)
                 {
                     pawn.interactions.TryInteractWith(base.Baby, ChildrensBookDefOf.BBLK_BabyRead);
                 }
+                pawn.GainComfortFromCellIfPossible();
                 if (roomPlayGainFactor < 0f)
                 {
                     roomPlayGainFactor = BabyPlayUtility.GetRoomPlayGainFactors(base.Baby) + Book.JoyFactor - 1;
