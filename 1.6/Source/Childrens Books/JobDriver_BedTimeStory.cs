@@ -106,7 +106,7 @@ namespace Childrens_Books
             };
             toil.tickIntervalAction = delegate (int delta)
             {
-                if (pawn.RaceProps.Humanlike && Find.TickManager.TicksGame % 600 == 0)
+                if (pawn.RaceProps.Humanlike && ticksLeftThisToil % 600 == 0)
                 {
                     pawn.interactions.TryInteractWith(Child, ChildrensBookDefOf.BBLK_BedTimeStory);
                 }
@@ -115,7 +115,8 @@ namespace Childrens_Books
                 {
                     JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.None, Book.JoyFactor * BookUtility.GetReadingBonus(pawn));
                 }
-                if ((isLearningDesire && LearningUtility.LearningTickCheckEnd(Child, delta)) || ticksLeftThisToil <= 0) pawn.jobs.curDriver.ReadyForNextToil();
+                if (isLearningDesire && Child.needs.learning.CurLevel < 1f) Child.needs.learning.Learn(1.2E-05f * LearningUtility.LearningRateFactor(Child) * (float)delta);
+                if (ticksLeftThisToil <= 0) pawn.jobs.curDriver.ReadyForNextToil();
                 if (pawn.IsHashIntervalTick(600))
                 {
                     pawn.jobs.CheckForJobOverride(9.1f);
